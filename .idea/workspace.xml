@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/API/Controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Repository/IBookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/BookDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/API/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/API/Controller/CCharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/DataLoaderInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/EndPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Model/CCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Model/CCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Repository/ICharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Repository/ICCharacterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/API/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/API/Controller/CCharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/CCharacterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/CosmereBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/CosmereBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Model/CCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Repository/IBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Repository/ICCharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/ICCharacterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/test/java/com/cosmere_backend/cosmere_backend/CosmereBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/test/java/com/cosmere_backend/CosmereBackendApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,19 +51,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CosmereBackendApplication.executor": "Run",
+    "Maven.cosmere-backend [clean,install].executor": "Run",
     "Maven.cosmere-backend [clean].executor": "Run",
+    "Maven.cosmere-backend [clear].executor": "Run",
     "Maven.cosmere-backend [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Adrian/Desktop/Cosmere-project",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clear" />
       <command value="mvn clean" />
       <command value="mvn install" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,5 +86,16 @@
       <updated>1736768877465</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
