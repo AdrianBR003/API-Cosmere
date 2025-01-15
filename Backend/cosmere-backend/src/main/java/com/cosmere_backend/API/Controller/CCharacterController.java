@@ -28,9 +28,24 @@ public class CCharacterController {
         return characterService.getCharacterById(id);
     }
 
+    /**
+     * <p>Devolver todos los libros a partir del ID del usuario</p>
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}/book")
     public List<BookDTO> getBookbyId(@PathVariable Long id) {
         return characterService.getAllBookById(id);
+    }
+
+    /**
+     * <p>Devolver el libro Inicial a partir del ID del usuario</p>
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}/FirstBook")
+    public BookDTO getBookInicialbyId(@PathVariable Long id) {
+        return characterService.getFirstBookById(id);
     }
 
     // CREATE
