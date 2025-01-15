@@ -15,4 +15,7 @@ public interface IRCharacterBookRepository extends JpaRepository<CCharacterBook,
 
     @Query("SELECT cb.book.id_Book FROM CCharacterBook cb WHERE cb.character.id_Character = :id_character")
     List<Long> findBooksByCharacterId(@Param("id_character") Long id_character);
+
+    @Query("SELECT cb.character.id_Character FROM CCharacterBook cb WHERE cb.book.id_Book = :id_book")
+    List<Long> findCharactersByBookId(@Param("id_book") Long id_book);
 }
