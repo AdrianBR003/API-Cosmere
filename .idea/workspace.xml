@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacterBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacterBookId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IRCharacterBookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/CCharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/CCharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/BookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
     </list>
@@ -95,7 +95,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

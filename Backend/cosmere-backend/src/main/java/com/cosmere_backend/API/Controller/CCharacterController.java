@@ -1,5 +1,6 @@
 package com.cosmere_backend.API.Controller;
 
+import com.cosmere_backend.API.DTO.BookDTO;
 import com.cosmere_backend.API.DTO.CCharacterDTO;
 import com.cosmere_backend.Model.CCharacter;
 import com.cosmere_backend.Service.CharacterService;
@@ -27,9 +28,9 @@ public class CCharacterController {
         return characterService.getCharacterById(id);
     }
 
-    @GetMapping("/{id}/{idLibro}")
-    public CCharacterDTO getBookbyId(@PathVariable Long id) {
-        return characterService.getCharacterById(id);
+    @GetMapping("/{id}/book")
+    public List<BookDTO> getBookbyId(@PathVariable Long id) {
+        return characterService.getAllBookById(id);
     }
 
     // CREATE
@@ -44,3 +45,6 @@ public class CCharacterController {
         characterService.deleteCharacter(id);
     }
 }
+
+
+

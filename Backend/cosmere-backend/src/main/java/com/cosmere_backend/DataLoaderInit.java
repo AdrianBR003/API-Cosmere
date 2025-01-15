@@ -29,9 +29,11 @@ public class DataLoaderInit implements CommandLineRunner {
             CCharacter dalinar = new CCharacter("Dalinar");
 
             Book twok = new Book("The Way of Kings","StormLight", 2000);
+            Book eif = new Book("El Imperio Final","MistBorn", 2000);
 
             // Antes de nada guardamos el libro en la base de datos
             bookRepository.save(twok);
+            bookRepository.save(eif);
 
             // Relacionar los libros entre ellos
 
@@ -43,6 +45,12 @@ public class DataLoaderInit implements CommandLineRunner {
             shallan.addBook(twok);
             dalinar.setFirstBook(twok);
             dalinar.addBook(twok);
+
+            kaladin.addBook(eif);
+            shallan.addBook(eif);
+            dalinar.addBook(eif);
+
+
 
             characterRepository.save(kaladin);
             characterRepository.save(shallan);
