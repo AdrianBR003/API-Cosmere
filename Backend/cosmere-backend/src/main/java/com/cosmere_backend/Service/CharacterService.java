@@ -22,7 +22,7 @@ public class CharacterService {
     public List<CCharacterDTO> getAllCharacters() {
         return characterRepository.findAll()
                 .stream()
-                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character()))
+                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original()))
                 .collect(Collectors.toList());
     }
 
@@ -40,6 +40,10 @@ public class CharacterService {
                 character.getId_Libro_Original()
         );
     }
+
+//    public BookDTO getBookBycId(Long id){
+//        Book book = getCharacterById(id).getId_libro_Original();
+//    }
 
     public CCharacter createCharacter(CCharacter character) {
         return characterRepository.save(character);

@@ -1,5 +1,8 @@
 package com.cosmere_backend.API.DTO;
 
+import jakarta.persistence.Entity;
+
+
 public class CCharacterDTO {
     private Long id_Character;
     private String name_Character;
@@ -18,6 +21,24 @@ public class CCharacterDTO {
         this.age_Character = age_Character;
         this.id_libro_Original = id_libro_Original;
     }
+
+    // Metodos
+
+
+
+    @Override
+    public String toString() {
+        return "CCharacterDTO{" +
+                "id_Character=" + id_Character +
+                ", name_Character='" + name_Character + '\'' +
+                ", age_Character=" + age_Character +
+                ", id_libro_Original=" + id_libro_Original +
+                '}';
+    }
+
+
+    // Getter and Setter
+
 
     public int getAge_Character() {
         return age_Character;

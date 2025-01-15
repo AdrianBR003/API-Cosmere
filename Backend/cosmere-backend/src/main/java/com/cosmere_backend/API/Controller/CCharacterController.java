@@ -27,6 +27,11 @@ public class CCharacterController {
         return characterService.getCharacterById(id);
     }
 
+    @GetMapping("/{id}/{idLibro}")
+    public CCharacterDTO getBookbyId(@PathVariable Long id) {
+        return characterService.getCharacterById(id);
+    }
+
     // CREATE
     @PostMapping
     public CCharacter createCharacter(@RequestBody CCharacter character) {

@@ -1,5 +1,8 @@
 package com.cosmere_backend.API.DTO;
 
+import jakarta.persistence.Entity;
+
+
 public class BookDTO {
     private Long id_Book;
     private String name_Book;
@@ -14,6 +17,21 @@ public class BookDTO {
         this.saga_Book = saga_Book;
         this.pages_Book = pages_Book;
     }
+
+    // Metodos
+
+    @Override
+    public String toString() {
+        return "BookDTO{" +
+                "id_Book=" + id_Book +
+                ", name_Book='" + name_Book + '\'' +
+                ", saga_Book='" + saga_Book + '\'' +
+                ", pages_Book=" + pages_Book +
+                '}';
+    }
+
+
+    // Getter y Setter
 
     public Long getId_Book() {
         return id_Book;

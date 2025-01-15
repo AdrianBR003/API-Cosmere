@@ -24,7 +24,6 @@ public class DataLoaderInit implements CommandLineRunner {
         // Inserta datos iniciales si no existen
         if (characterRepository.count() == 0 && bookRepository.count()==0) {
 
-
             CCharacter kaladin = new CCharacter("Kaladin");
             CCharacter shallan = new CCharacter("Shallan");
             CCharacter dalinar = new CCharacter("Dalinar");
@@ -38,6 +37,7 @@ public class DataLoaderInit implements CommandLineRunner {
 
             // Primero Guardamos la ID del libro ya que es el primero en el que aparece el personaje
             kaladin.setFirstBook(twok);
+            System.out.println("Kaladin.toString = " + kaladin.toString());
             kaladin.addBook(twok);
             shallan.setFirstBook(twok);
             shallan.addBook(twok);
