@@ -38,6 +38,17 @@ public class CharacterService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * <p>Recogemos todos los personajes Detalladamente</p>
+     */
+    public List<CCharacterDTO> getAllCharactersDetails() {
+        return icCharacterRepository.findAll()
+                .stream()
+                .map(character -> getCharacterById(character.getId_Character()))
+                .collect(Collectors.toList());
+    }
+
+
     public CCharacterDTO getCharacterById(Long id) {
         CCharacter character = icCharacterRepository.findById(id).orElse(null);
         assert character != null;

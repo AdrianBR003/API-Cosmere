@@ -23,9 +23,26 @@ public class CCharacterController {
         return characters;
     }
 
+
+
+    /**
+     * <p>Devolver el personaje detallado a partir de la ID</p>
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}")
     public CCharacterDTO getCharacterById(@PathVariable Long id) {
         return characterService.getCharacterById(id);
+    }
+
+
+    /**
+     * <p>Devolver todos los personajes DETALLADOS</p>
+     * @return
+     */
+    @GetMapping("/all")
+    public List<CCharacterDTO> getAllCharactersDetails() {
+        return characterService.getAllCharactersDetails();
     }
 
     /**
