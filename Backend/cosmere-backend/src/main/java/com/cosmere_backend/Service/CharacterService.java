@@ -30,7 +30,7 @@ public class CharacterService {
     public List<CCharacterDTO> getAllCharacters() {
         return icCharacterRepository.findAll()
                 .stream()
-                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original()))
+                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original(), character.getSaga()))
                 .collect(Collectors.toList());
     }
 
@@ -45,7 +45,8 @@ public class CharacterService {
                 character.getId_Character(),
                 character.getName_Character(),
                 character.getAge_Character(),
-                character.getId_Libro_Original()
+                character.getId_Libro_Original(),
+                character.getSaga()
         );
     }
 
