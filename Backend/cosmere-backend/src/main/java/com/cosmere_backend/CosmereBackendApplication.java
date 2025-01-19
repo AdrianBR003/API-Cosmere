@@ -15,5 +15,4 @@ public class CosmereBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CosmereBackendApplication.class, args);
 	}
-
 }

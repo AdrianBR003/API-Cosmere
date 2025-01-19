@@ -1,7 +1,10 @@
 package com.cosmere_backend;
 
 import com.cosmere_backend.Model.Book;
-import com.cosmere_backend.Model.MistBorn.MistBornCharacter;
+import com.cosmere_backend.Model.MistBorn.MistbornCharacter;
+import com.cosmere_backend.Model.MistBorn.MistbornType;
+import com.cosmere_backend.Model.StormLight.StormlightCharacter;
+import com.cosmere_backend.Model.StormLight.StormlightType;
 import com.cosmere_backend.Repository.IBookRepository;
 import com.cosmere_backend.Repository.ICCharacterRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -24,9 +27,11 @@ public class DataLoaderInit implements CommandLineRunner {
         // Inserta datos iniciales si no existen
         if (characterRepository.count() == 0 && bookRepository.count()==0) {
 
-            MistBornCharacter kelsier = new MistBornCharacter("Kelsier",20,0L,"ladron","MistBorn","All",false);
-            MistBornCharacter hammond = new MistBornCharacter("Hammond",20,0L,"ladron","MistBorn","All",false);
-            MistBornCharacter marsh = new MistBornCharacter("Marsh",20,0L,"inquisidor","Inquisitor","All",true);
+            MistbornCharacter kelsier = new MistbornCharacter("Kelsier",20,0L,"ladron", MistbornType.MISTBORN,"All",false);
+            MistbornCharacter hammond = new MistbornCharacter("Hammond",20,0L,"ladron",MistbornType.MISTBORN,"All",false);
+            MistbornCharacter marsh = new MistbornCharacter("Marsh",20,0L,"inquisidor",MistbornType.INQUISITOR,"All",true);
+            StormlightCharacter kaladin = new StormlightCharacter("Kaladin",19,0L,"StormLight", StormlightType.CORREDOR_VIENTO,true,4);
+
 
             Book twok = new Book("The Way of Kings","StormLight", 2000);
             Book eif = new Book("El Imperio Final","MistBorn", 2000);
@@ -50,11 +55,14 @@ public class DataLoaderInit implements CommandLineRunner {
             hammond.addBook(eif);
             marsh.addBook(eif);
 
+            kaladin.addBook(twok);
+            kaladin.setFirstBook(twok);
 
 
             characterRepository.save(kelsier);
             characterRepository.save(hammond);
             characterRepository.save(marsh);
+            characterRepository.save(kaladin);
         }
 
     }

@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/MistBornController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistBornCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IMistBornCharacterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/MistBornService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/StormLightController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/DTOchild/MistBornDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/DTOchild/StormLightDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistbornType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/StormLight/StormlightCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/StormLight/StormlightType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IStormLightCharacterRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/StormLightService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/MistBornController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/MistBornController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/CosmereBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/CosmereBackendApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistBornCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistbornCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IMistBornCharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Repository/IMistBornCharacterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/MistBornService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/MistBornService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -92,16 +99,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -7,21 +7,22 @@ import lombok.NonNull;
 @Entity
 @PrimaryKeyJoinColumn(name = "id_Character")  // Une su PK a la PK de la tabla padre
 @Table(name = "mistborn_character")
-public class MistBornCharacter extends CCharacter{
+public class MistbornCharacter extends CCharacter {
 
     private String rolSociety;
 
-    private String mistbornType;
+    @Enumerated(EnumType.STRING)
+    private MistbornType mistbornType;
 
     private String alomanticPower;
 
     private Boolean usesHemalurgy;
 
 
-    public MistBornCharacter() {
+    public MistbornCharacter() {
     }
 
-    public MistBornCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, String rolSociety, String mistbornType, String alomanticPower, Boolean usesHemalurgy) {
+    public MistbornCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, String rolSociety, MistbornType mistbornType, String alomanticPower, Boolean usesHemalurgy) {
         super(name_Character, age_Character, id_Libro_Original, "MistBorn");
         this.rolSociety = rolSociety;
         this.mistbornType = mistbornType;
@@ -71,11 +72,11 @@ public class MistBornCharacter extends CCharacter{
         this.rolSociety = rolSociety;
     }
 
-    public String getMistbornType() {
+    public MistbornType getMistbornType() {
         return mistbornType;
     }
 
-    public void setMistbornType(String mistbornType) {
+    public void setMistbornType(MistbornType mistbornType) {
         this.mistbornType = mistbornType;
     }
 
