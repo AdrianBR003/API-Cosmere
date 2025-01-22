@@ -6,38 +6,44 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table(name = "characters")
-public class CCharacter {
+@Table(name = "ccharacter")
+@Inheritance(strategy = InheritanceType.JOINED) // Herencia de PK
+public abstract class CCharacter {
+
+    // Atributos
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Character;
-
+    protected Long id_Character;
     @NonNull
-    private String name_Character;
-
-    private int age_Character;
-
+    protected String name_Character;
+    protected int age_Character;
     @NonNull
-    private Long id_Libro_Original;
-
+    protected Long id_Libro_Original;
+    @NonNull
+    protected String saga;
     @ManyToMany
     @JoinTable(
             name = "Character_Book",
             joinColumns = @JoinColumn(name = "id_Character"),
             inverseJoinColumns = @JoinColumn(name = "id_Book")
     )
-    private List<Book> listaLibrosAparece = new ArrayList<>();
+    protected List<Book> listaLibrosAparece = new ArrayList<>();
 
     // Constructores adicionales...
 
     public CCharacter(){}
 
+    public CCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, @NonNull String saga) {
+        this.name_Character = name_Character;
+        this.age_Character = age_Character;
+        this.id_Libro_Original = id_Libro_Original;
+        this.saga = saga;
+    }
+
     public CCharacter(@NonNull String nameCharacter) {
         this.name_Character = nameCharacter;
     }
-
-
 
     // Métodos adicionales...
 
@@ -60,6 +66,7 @@ public class CCharacter {
                 "id_Character=" + id_Character +
                 ", name_Character='" + name_Character + '\'' +
                 ", age_Character=" + age_Character +
+                ", saga_Character= " + saga +
                 ", id_Libro_Original=" + id_Libro_Original +
                 '}';
     }
@@ -100,11 +107,11 @@ public class CCharacter {
         this.id_Libro_Original = id_Libro_Original;
     }
 
-    public List<Book> getListaLibrosAparece() {
-        return listaLibrosAparece;
+    public String getSaga() {
+        return saga;
     }
 
-    public void setListaLibrosAparece(List<Book> listaLibrosAparece) {
-        this.listaLibrosAparece = listaLibrosAparece;
+    public void setSaga(String saga) {
+        this.saga = saga;
     }
 }

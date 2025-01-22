@@ -63,7 +63,7 @@ public class BookService {
         List<Long> listaC = irCharacterBookRepository.findCharactersByBookId(id);
         return listaC.stream()
                 .map(characterId -> icCharacterRepository.findById(characterId).orElseThrow(() -> new RuntimeException("Character not found")))
-                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original()))
+                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original(), character.getSaga()))
                 .collect(Collectors.toList());
     }
 

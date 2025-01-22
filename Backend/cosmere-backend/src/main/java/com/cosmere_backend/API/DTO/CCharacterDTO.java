@@ -8,6 +8,7 @@ public class CCharacterDTO {
     private String name_Character;
     private int age_Character;
     private Long id_libro_Original;
+    private String saga_inicial;
 
 
     public CCharacterDTO(Long idCharacter, String nameCharacter) {
@@ -15,11 +16,12 @@ public class CCharacterDTO {
         this.name_Character = nameCharacter;
     }
 
-    public CCharacterDTO(Long id_Character, String name_Character, int age_Character, Long id_libro_Original) {
+    public CCharacterDTO(Long id_Character, String name_Character, int age_Character, Long id_libro_Original, String sagaInicial) {
         this.id_Character = id_Character;
         this.name_Character = name_Character;
         this.age_Character = age_Character;
         this.id_libro_Original = id_libro_Original;
+        this.saga_inicial = sagaInicial;
     }
 
     // Metodos
@@ -33,6 +35,7 @@ public class CCharacterDTO {
                 ", name_Character='" + name_Character + '\'' +
                 ", age_Character=" + age_Character +
                 ", id_libro_Original=" + id_libro_Original +
+                ", saga_Inicial =" + saga_inicial+
                 '}';
     }
 
@@ -70,5 +73,13 @@ public class CCharacterDTO {
 
     public void setName_Character(String name_Character) {
         this.name_Character = name_Character;
+    }
+
+    public String getSaga_inicial() {
+        return saga_inicial;
+    }
+
+    public void setSaga_inicial(String saga_inicial) {
+        this.saga_inicial = saga_inicial;
     }
 }

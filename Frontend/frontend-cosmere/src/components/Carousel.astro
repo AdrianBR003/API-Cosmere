@@ -1,0 +1,27 @@
+---
+import "../styles/carousel.css";
+---
+<div class="portada">
+  <div class="portada-slide">
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+    <img src="/assets/portadas/portada_elcamino.jpg" />
+  </div>
+</div>
+
+<script>
+  var portadaSlide = document.querySelector(".portada-slide");
+  if (portadaSlide) {
+    var copy = portadaSlide.cloneNode(true);
+    var portadaContainer = document.querySelector(".portada");
+    if (portadaContainer) {
+      portadaContainer.appendChild(copy);
+    }
+  }
+</script>
