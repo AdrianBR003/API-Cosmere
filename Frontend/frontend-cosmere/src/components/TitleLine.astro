@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="container">
+  <hr />
+  <h1>{title}</h1>
+  <hr />
+</div>a
+
+<style>
+  .container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  hr {
+    background-color: #333;
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    color: #fff;
+  }
+
+</style>
