@@ -1,0 +1,55 @@
+.card {
+  width: 90%; /* Reduce el tamaño de las tarjetas */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+  height: auto;
+}
+
+.container {
+  padding: 12px; /* Reduce el espacio dentro de las tarjetas */
+  text-align: center;
+}
+
+h4 {
+  margin: 8px 0;
+  font-size: 16px; /* Tamaño predeterminado */
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 12px; /* Tamaño predeterminado */
+  color: #555;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  h4 {
+    font-size: 14px; /* Reducir el tamaño del título */
+  }
+
+  p {
+    font-size: 10px; /* Reducir el tamaño de la descripción */
+  }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h4 {
+    font-size: 12px; /* Reducir aún más el tamaño del título */
+  }
+
+  p {
+    font-size: 8px; /* Reducir aún más el tamaño de la descripción */
+  }
+}

@@ -1,0 +1,36 @@
+---
+import CardCharacter from "../components/CardsCharacters.astro";
+
+const characters = [
+  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
+  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
+];
+---
+
+<div class="card-table">
+  {characters.map((character) => (
+    <CardCharacter {...character} />
+  ))}
+</div>
+
+<style>
+  .card-table {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Siempre 4 columnas */
+  gap: 35px; /* Espacio reducido entre tarjetas */
+  justify-content: center; /* Centra la cuadrícula */
+  padding: 20px;
+  max-width: 80%; /* Limita el ancho máximo de la tabla */
+  margin: 0 auto; /* Centra la tabla en la página */
+}
+</style>
