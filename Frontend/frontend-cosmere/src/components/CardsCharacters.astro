@@ -10,13 +10,15 @@ export interface Props {
     saga_inicial: string;
 }
 
-const { name_Character, age_Character} = Astro.props;
+const { name_Character, saga_inicial} = Astro.props;
+const baseImageUrl = "/assets/characters"; 
+const imageUrl = `${baseImageUrl}/character_${name_Character}.jpg`; 
 ---
 
 <div class="card">
-  <img src="/assets/portadas/portada_elcamino.jpg" alt={name_Character} class="card-img" />
+  <img src={imageUrl} alt={name_Character} class="card-img" />
   <div class="container">
     <h4><b>{name_Character}</b></h4>
-    <p>{age_Character}</p>
+    <p>{saga_inicial}</p>
   </div>
 </div>

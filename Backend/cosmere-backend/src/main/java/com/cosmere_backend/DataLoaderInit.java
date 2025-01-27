@@ -31,14 +31,39 @@ public class DataLoaderInit implements CommandLineRunner {
             MistbornCharacter hammond = new MistbornCharacter("Hammond",20,0L,"ladron",MistbornType.MISTBORN,"All",false);
             MistbornCharacter marsh = new MistbornCharacter("Marsh",20,0L,"inquisidor",MistbornType.INQUISITOR,"All",true);
             StormlightCharacter kaladin = new StormlightCharacter("Kaladin",19,0L,"StormLight", StormlightType.CORREDOR_VIENTO,true,4);
+            MistbornCharacter vin = new MistbornCharacter("Vin",19,0L,"ladron",MistbornType.MISTBORN,"All",false);
 
 
-            Book twok = new Book("The Way of Kings","StormLight", 2000);
-            Book eif = new Book("El Imperio Final","MistBorn", 2000);
 
             // Antes de nada guardamos el libro en la base de datos
-            bookRepository.save(twok);
+
+            // Mistborn
+            Book eif = new Book("El Imperio Final","MistBorn", 2000);
             bookRepository.save(eif);
+            Book epa = new Book("El pozo de la Ascension", "MistBorn",2000);
+            bookRepository.save(epa);
+            Book ehe = new Book("El Heroe de las Eras", "MistBorn",2000);
+            bookRepository.save(ehe);
+//            Book adl = new Book("Aleacion de Ley", "MistBorn",2000);
+//            bookRepository.save(adl);
+//            Book sdi = new Book("Sombras de Identidad", "MistBorn",2000);
+//            bookRepository.save(sdi);
+//            Book bdd = new Book("Brazales de Duelo", "MistBorn",2000);
+//            bookRepository.save(bdd);
+//            Book emp = new Book("El Metal Perdido", "MistBorn",2000);
+//            bookRepository.save(emp);
+
+            // Archivo
+            Book twok = new Book("The Way of Kings","StormLight", 2000);
+            bookRepository.save(twok);
+            Book wod = new Book("Words of Radiance", "StormLight", 2000);
+            bookRepository.save(wod);
+            Book o = new Book("Oathbringer", "StormLight", 2000);
+            bookRepository.save(o);
+            Book rosw = new Book("Rhythm of War", "StormLight", 2000);
+            bookRepository.save(rosw);
+            Book vyv = new Book("Viento y Verdad", "StormLight", 2000);
+            bookRepository.save(vyv);
 
             // Relacionar los libros entre ellos
 
@@ -54,7 +79,8 @@ public class DataLoaderInit implements CommandLineRunner {
             kelsier.addBook(eif);
             hammond.addBook(eif);
             marsh.addBook(eif);
-
+            vin.addBook(eif);
+            vin.setFirstBook(eif);
             kaladin.addBook(twok);
             kaladin.setFirstBook(twok);
 
@@ -63,6 +89,7 @@ public class DataLoaderInit implements CommandLineRunner {
             characterRepository.save(hammond);
             characterRepository.save(marsh);
             characterRepository.save(kaladin);
+            characterRepository.save(vin);
         }
 
     }

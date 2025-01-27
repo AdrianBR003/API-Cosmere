@@ -24,6 +24,9 @@ body {
   background: white;
   white-space: nowrap;
   position: relative;
+  display: flex;
+  overflow: hidden; /* Esconde los elementos fuera del viewport */
+  width: 100%;
 }
 
 .portada:before,
@@ -51,8 +54,9 @@ body {
 }
 
 .portada-slide {
-  display: inline-block;
-  animation: 35s slide infinite linear;
+  display: flex;
+  gap: 10px; /* Espacio entre portadas */
+  animation: slide 20s linear infinite; /* Animación infinita */
 }
 
 .portada-slide img {
@@ -64,4 +68,14 @@ body {
 
 .portada-slide img:hover {
   transform: scale(1.1); /* Incrementa el tamaño un 10% */
+}
+
+/* Animación infinita */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Mueve la mitad del contenedor (ya que está duplicado) */
+  }
 }

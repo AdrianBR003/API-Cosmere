@@ -1,27 +1,33 @@
 ---
 import "../styles/carousel.css";
+import type { Book } from "../lib/utils/fetchBooks"; 
+import { fetchBooks} from "../lib/utils/fetchBooks"; 
+let Books:  Book[] = [];
+
+
+try {
+  // Obtén los datos desde el backend
+  Books = await fetchBooks();
+  console.log(Books);
+} catch (error) {
+  console.error("Error fetching Books:", error);
+}
+
+// Base de la URL de las portadas
+const baseImageUrl = "/assets/portadas";
 ---
+
 <div class="portada">
   <div class="portada-slide">
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
-    <img src="/assets/portadas/portada_elcamino.jpg" />
+    {/* Primera iteración de las portadas */}
+    {Books.map((book) => {
+      const coverUrl = `${baseImageUrl}/portada_${book.id_Book}.jpg`;
+      return <img src={coverUrl} alt={book.name_Book} />;
+    })}
+    {/* Duplicamos las portadas para el efecto infinito */}
+    {Books.map((book) => {
+      const coverUrl = `${baseImageUrl}/portada_${book.id_Book}.jpg`;
+      return <img src={coverUrl} alt={book.name_Book} />;
+    })}
   </div>
 </div>
-
-<script>
-  var portadaSlide = document.querySelector(".portada-slide");
-  if (portadaSlide) {
-    var copy = portadaSlide.cloneNode(true);
-    var portadaContainer = document.querySelector(".portada");
-    if (portadaContainer) {
-      portadaContainer.appendChild(copy);
-    }
-  }
-</script>

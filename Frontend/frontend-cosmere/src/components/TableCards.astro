@@ -1,7 +1,7 @@
 ---
 import CardCharacter from "../components/CardsCharacters.astro";
-import type { Character } from "../lib/fetchCharacters"; // Usa 'import type' para los tipos
-import { fetchCharacters} from "../lib/fetchCharacters"; // Asegúrate de la ruta correcta
+import type { Character } from "../lib/utils/fetchCharacters"; 
+import { fetchCharacters} from "../lib/utils/fetchCharacters"; 
 
 let characters:  Character[] = [];
 
@@ -23,11 +23,11 @@ try {
 <style>
   .card-table {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Siempre 4 columnas */
-    gap: 35px; /* Espacio reducido entre tarjetas */
-    justify-content: center; /* Centra la cuadrícula */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px; 
+    justify-content: center; 
     padding: 20px;
-    max-width: 80%; /* Limita el ancho máximo de la tabla */
-    margin: 0 auto; /* Centra la tabla en la página */
+    max-width: 80%; 
+    margin: 0 auto; 
   }
 </style>

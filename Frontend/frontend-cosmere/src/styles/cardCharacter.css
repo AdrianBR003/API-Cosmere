@@ -1,19 +1,29 @@
 .card {
-  width: 90%; /* Reduce el tamaño de las tarjetas */
+  width: 90%; /* Ancho adaptable */
+  max-width: 300px; /* Tamaño máximo */
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  display: flex;
+  flex-direction: column; /* Apila texto e imagen en columnas */
 }
-
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
 }
 
+.card-text {
+  padding: 12px;
+  text-align: center;
+  background-color: #fff;
+  flex: 0 0 100px; /* Ocupa siempre 100px de altura fija */
+}
+
 .card-img {
-  width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
-  height: auto;
+  flex: 1; /* La imagen ocupa el resto del espacio dinámicamente */
+  width: 100%; /* Imagen siempre del mismo ancho que la tarjeta */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
 }
 
 .container {
@@ -32,24 +42,20 @@ p {
   color: #555;
 }
 
-/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
-  h4 {
-    font-size: 14px; /* Reducir el tamaño del título */
+  .card {
+    max-width: 250px;
   }
-
-  p {
-    font-size: 10px; /* Reducir el tamaño de la descripción */
+  .card-text {
+    flex: 0 0 80px; /* Reduce la altura del texto en móviles */
   }
 }
 
-/* Media query para pantallas muy pequeñas */
 @media (max-width: 480px) {
-  h4 {
-    font-size: 12px; /* Reducir aún más el tamaño del título */
+  .card {
+    max-width: 200px;
   }
-
-  p {
-    font-size: 8px; /* Reducir aún más el tamaño de la descripción */
+  .card-text {
+    flex: 0 0 70px; /* Aún más pequeño para pantallas muy pequeñas */
   }
 }

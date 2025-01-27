@@ -7,7 +7,7 @@ export interface Character {
   }
   
   export async function fetchCharacters(): Promise<Character[]> {
-    const response = await fetch('http://localhost:8080/api/characters'); // Cambia la URL si es necesario
+    const response = await fetch('http://localhost:8080/api/characters'); 
     if (!response.ok) {
       throw new Error('Error fetching characters');
     }
