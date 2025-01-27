@@ -3,18 +3,20 @@
 import "../styles/cardCharacter.css";
 
 export interface Props {
-  name: string;
-  description: string;
-  img: string;
+    id_Character: number; 
+    name_Character: string;
+    age_Character: number;
+    id_libro_Original: number; 
+    saga_inicial: string;
 }
 
-const { name, description, img } = Astro.props;
+const { name_Character, age_Character} = Astro.props;
 ---
 
 <div class="card">
-  <img src={img} alt={name} class="card-img" />
+  <img src="/assets/portadas/portada_elcamino.jpg" alt={name_Character} class="card-img" />
   <div class="container">
-    <h4><b>{name}</b></h4>
-    <p>{description}</p>
+    <h4><b>{name_Character}</b></h4>
+    <p>{age_Character}</p>
   </div>
 </div>

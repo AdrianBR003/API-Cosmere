@@ -1,20 +1,17 @@
 ---
 import CardCharacter from "../components/CardsCharacters.astro";
+import type { Character } from "../lib/fetchCharacters"; // Usa 'import type' para los tipos
+import { fetchCharacters} from "../lib/fetchCharacters"; // Asegúrate de la ruta correcta
 
-const characters = [
-  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "John Doe", description: "Architect & Engineer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Alice Johnson", description: "Graphic Designer", img: "/assets/portadas/portada_elcamino.jpg" },
-  { name: "Jane Smith", description: "Software Developer", img: "/assets/portadas/portada_elcamino.jpg" },
-];
+let characters:  Character[] = [];
+
+try {
+  // Obtén los datos desde el backend
+  characters = await fetchCharacters();
+  console.log(characters);
+} catch (error) {
+  console.error("Error fetching characters:", error);
+}
 ---
 
 <div class="card-table">
@@ -25,12 +22,12 @@ const characters = [
 
 <style>
   .card-table {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Siempre 4 columnas */
-  gap: 35px; /* Espacio reducido entre tarjetas */
-  justify-content: center; /* Centra la cuadrícula */
-  padding: 20px;
-  max-width: 80%; /* Limita el ancho máximo de la tabla */
-  margin: 0 auto; /* Centra la tabla en la página */
-}
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Siempre 4 columnas */
+    gap: 35px; /* Espacio reducido entre tarjetas */
+    justify-content: center; /* Centra la cuadrícula */
+    padding: 20px;
+    max-width: 80%; /* Limita el ancho máximo de la tabla */
+    margin: 0 auto; /* Centra la tabla en la página */
+  }
 </style>

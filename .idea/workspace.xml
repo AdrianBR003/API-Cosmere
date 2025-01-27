@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/CCharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/Controller/CCharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/.astro/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/.astro/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___aria-query.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___aria-query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___aria-query.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___aria-query.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___axobject-query.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___axobject-query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___axobject-query.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___axobject-query.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___cssesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___cssesc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___cssesc.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/astro___cssesc.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/chunk-BUSYA2B4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/chunk-BUSYA2B4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/chunk-BUSYA2B4.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/chunk-BUSYA2B4.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/node_modules/.vite/deps/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +56,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/MistBornCharacter&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Adrian/Desktop/Cosmere-project&quot;,
