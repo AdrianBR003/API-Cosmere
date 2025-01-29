@@ -1,45 +1,43 @@
 .card {
-  width: 90%; /* Ancho adaptable */
-  max-width: 300px; /* Tamaño máximo */
+  width: 100%; 
+  max-width: 300px; 
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   display: flex;
-  flex-direction: column; /* Apila texto e imagen en columnas */
+  flex-direction: column;
 }
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-}
-
-.card-text {
-  padding: 12px;
-  text-align: center;
-  background-color: #fff;
-  flex: 0 0 100px; /* Ocupa siempre 100px de altura fija */
-}
+  box-shadow: 0 8px 16px 0 #555;
+} 
 
 .card-img {
-  flex: 1; /* La imagen ocupa el resto del espacio dinámicamente */
-  width: 100%; /* Imagen siempre del mismo ancho que la tarjeta */
-  object-fit: cover; /* Recorta la imagen sin deformarla */
+  flex: 1; 
+  width: 100%;
+  object-fit: cover; 
 }
 
 .container {
-  padding: 12px; /* Reduce el espacio dentro de las tarjetas */
+  padding: 12px;
   text-align: center;
 }
 
 h4 {
   margin: 8px 0;
-  font-size: 16px; /* Tamaño predeterminado */
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
 }
 
 p {
-  font-size: 12px; /* Tamaño predeterminado */
+  font-size: 14px;
   color: #555;
+}
+
+p:hover{
+  color: #FC9200;
+  font-weight: bold; 
 }
 
 @media (max-width: 768px) {
@@ -47,7 +45,7 @@ p {
     max-width: 250px;
   }
   .card-text {
-    flex: 0 0 80px; /* Reduce la altura del texto en móviles */
+    flex: 0 0 80px; 
   }
 }
 
@@ -56,6 +54,6 @@ p {
     max-width: 200px;
   }
   .card-text {
-    flex: 0 0 70px; /* Aún más pequeño para pantallas muy pequeñas */
+    flex: 0 0 70px;
   }
 }

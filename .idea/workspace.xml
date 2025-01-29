@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/public/assets/portadas/portada_elcamino.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/CardsCharacters.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/CardsCharacters.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/Carousel.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/Carousel.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/TableCards.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/TableCards.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/lib/fetchCharacters.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/cardCharacter.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/cardCharacter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/carousel.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
