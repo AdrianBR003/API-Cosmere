@@ -6,7 +6,6 @@ import { fetchCharacters} from "../lib/utils/fetchCharacters";
 let characters:  Character[] = [];
 
 try {
-  // Obtén los datos desde el backend
   characters = await fetchCharacters();
   console.log(characters);
 } catch (error) {

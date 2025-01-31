@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoaderInit implements CommandLineRunner {
-
+    
     private final ICCharacterRepository characterRepository;
     private final IBookRepository bookRepository;
 

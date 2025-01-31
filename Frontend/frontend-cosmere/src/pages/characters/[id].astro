@@ -1,0 +1,49 @@
+---
+import { fetchCharacters } from "@lib/utils/fetchCharacters";
+import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
+import type { Character } from "@lib/utils/fetchCharacters";
+
+
+export async function getStaticPaths() {
+
+  let characters: Character[] = [];
+
+  try {
+    characters = await fetchCharacters();
+    console.log(characters);
+  } catch (error) {
+    console.error("Error fetching characters:", error);
+  }
+
+  return characters.map((character: Character) => ({
+    params: { 
+      id: character.id_Character 
+     },
+  }));
+}
+
+const { id } = Astro.params; 
+
+// Buscamos al character por su ID (TODO: Intentar optimizar para no hacer dos búsquedas)
+
+let characterId: Character | null = null;
+
+try {
+    characterId = await fetchCharacterId(id);
+    console.log("CharacterID Encontrado! = " + characterId ? characterId?.id_Character : null);
+} catch (error) {
+    console.error("Error fetching characters:", error);
+}
+
+const name = characterId ? characterId.name_Character : "Unknown Character";
+const age = characterId ? characterId.age_Character : 0; 
+const saga = characterId ? characterId.saga_inicial : "Unknown Saga Character"; 
+
+---
+
+<h1>ID Character = {id}</h1>
+<h1>Name Character = {name}</h1>
+<h1>Age Character = {age}</h1>
+<h1>Saga Character = {saga}</h1>
+
+
