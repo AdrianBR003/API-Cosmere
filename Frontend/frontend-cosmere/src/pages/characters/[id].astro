@@ -2,7 +2,10 @@
 import { fetchCharacters } from "@lib/utils/fetchCharacters";
 import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
 import type { Character } from "@lib/utils/fetchCharacters";
+import Header from "@components/Header.astro"
+import SectionInf from "@components/SectionInf.astro"
 
+// Fetch atributos personajes
 
 export async function getStaticPaths() {
 
@@ -35,15 +38,11 @@ try {
     console.error("Error fetching characters:", error);
 }
 
-const name = characterId ? characterId.name_Character : "Unknown Character";
-const age = characterId ? characterId.age_Character : 0; 
-const saga = characterId ? characterId.saga_inicial : "Unknown Saga Character"; 
+const nameCharacter = characterId ? characterId.name_Character : "Unknown Character";
+const ageCharacter = characterId ? characterId.age_Character : 0; 
+const sagaCharacter = characterId ? characterId.saga_inicial : "Unknown SagaCharacter Character"; 
 
 ---
 
-<h1>ID Character = {id}</h1>
-<h1>Name Character = {name}</h1>
-<h1>Age Character = {age}</h1>
-<h1>Saga Character = {saga}</h1>
-
-
+<Header title={nameCharacter} description={sagaCharacter} />
+<SectionInf /> 

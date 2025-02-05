@@ -1,13 +1,20 @@
 ---
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
-import TitleLine from '../components/TitleLine.astro';
-import TableCards from '../components/TableCards.astro';
-
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import TitleLine from "../components/TitleLine.astro";
+import TableCards from "../components/TableCards.astro";
+import Carousel from "@components/Carousel.astro";
 ---
 
 <Layout>
-	<Header />
-	<TitleLine title="Personajes" />
-	<TableCards />
+  <Header title="Cosmere Project" description="API en desarrollo del Cosmere"/>
+  <Carousel />
+  <TitleLine title="Personajes" />
+  <TableCards />
 </Layout>
+
+<style>
+  body {
+    background-color: #18181a;
+  }
+</style>

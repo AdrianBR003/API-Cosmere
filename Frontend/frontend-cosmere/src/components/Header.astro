@@ -2,16 +2,19 @@
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
 import Carousel from "./Carousel.astro";
+
+const { title, description} = Astro.props;
+
 ---
 
 <header>
-  <h1>Cosmere Project</h1>
-  <p>Prototipo de API del Cosmere</p>
+  <h1>{title}</h1>
+  <p>{description}</p>
 </header>
 <hr />
 
 <main>
-  <Carousel />
+  <slot />
 </main>
 
 <style>
