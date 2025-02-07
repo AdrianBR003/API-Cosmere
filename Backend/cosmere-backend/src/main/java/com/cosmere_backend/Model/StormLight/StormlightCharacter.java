@@ -1,9 +1,11 @@
 package com.cosmere_backend.Model.StormLight;
 
+import com.cosmere_backend.Model.Book;
 import com.cosmere_backend.Model.CCharacter;
-import com.cosmere_backend.Model.MistBorn.MistbornType;
 import jakarta.persistence.*;
 import lombok.NonNull;
+
+import java.util.List;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id_Character")  // Une su PK a la PK de la tabla padre
@@ -22,8 +24,8 @@ public class StormlightCharacter extends CCharacter{
     public StormlightCharacter() {
     }
 
-    public StormlightCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, @NonNull String saga, StormlightType radiantOrder, Boolean bondedSpren, Integer stormlightLevel) {
-        super(name_Character, age_Character, id_Libro_Original, saga);
+    public StormlightCharacter(@NonNull String name_Character, int fechaNacimiento, int fechaMuerte, @NonNull Long id_Libro_Original, List<String> titulos, @NonNull String saga, StormlightType radiantOrder, Boolean bondedSpren, Integer stormlightLevel) {
+        super(name_Character, fechaNacimiento, fechaMuerte, id_Libro_Original, titulos, saga);
         this.radiantOrder = radiantOrder;
         this.bondedSpren = bondedSpren;
         this.stormlightLevel = stormlightLevel;
@@ -39,10 +41,11 @@ public class StormlightCharacter extends CCharacter{
                 ", stormlightLevel=" + stormlightLevel +
                 ", id_Character=" + id_Character +
                 ", name_Character='" + name_Character + '\'' +
-                ", age_Character=" + age_Character +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaMuerte=" + fechaMuerte +
                 ", id_Libro_Original=" + id_Libro_Original +
+                ", titulos=" + titulos +
                 ", saga='" + saga + '\'' +
-                ", listaLibrosAparece=" + listaLibrosAparece +
                 '}';
     }
 

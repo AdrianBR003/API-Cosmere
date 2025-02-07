@@ -4,7 +4,6 @@ package com.cosmere_backend.Service;
 import com.cosmere_backend.API.DTO.BookDTO;
 import com.cosmere_backend.API.DTO.CCharacterDTO;
 import com.cosmere_backend.Model.Book;
-import com.cosmere_backend.Model.CCharacter;
 import com.cosmere_backend.Repository.IBookRepository;
 import com.cosmere_backend.Repository.ICCharacterRepository;
 import com.cosmere_backend.Repository.IRCharacterBookRepository;
@@ -63,7 +62,7 @@ public class BookService {
         List<Long> listaC = irCharacterBookRepository.findCharactersByBookId(id);
         return listaC.stream()
                 .map(characterId -> icCharacterRepository.findById(characterId).orElseThrow(() -> new RuntimeException("Character not found")))
-                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original(), character.getSaga()))
+                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getFechaNacimiento(),character.getFechaMuerte(), character.getTitulos(),character.getId_Libro_Original(), character.getSaga()))
                 .collect(Collectors.toList());
     }
 

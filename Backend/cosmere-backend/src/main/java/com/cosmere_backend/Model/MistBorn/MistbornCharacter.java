@@ -1,8 +1,11 @@
 package com.cosmere_backend.Model.MistBorn;
 
+import com.cosmere_backend.Model.Book;
 import com.cosmere_backend.Model.CCharacter;
 import jakarta.persistence.*;
 import lombok.NonNull;
+
+import java.util.List;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id_Character")  // Une su PK a la PK de la tabla padre
@@ -10,49 +13,49 @@ import lombok.NonNull;
 public class MistbornCharacter extends CCharacter {
 
     private String rolSociety;
-
     @Enumerated(EnumType.STRING)
     private MistbornType mistbornType;
-
-    private String alomanticPower;
-
-    private Boolean usesHemalurgy;
-
+    private List<String> capacidades;
 
     public MistbornCharacter() {
     }
 
-    public MistbornCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, String rolSociety, MistbornType mistbornType, String alomanticPower, Boolean usesHemalurgy) {
-        super(name_Character, age_Character, id_Libro_Original, "MistBorn");
+    public MistbornCharacter(@NonNull String name_Character, int fechaNacimiento, int fechaMuerte, @NonNull Long id_Libro_Original, List<String> titulos, @NonNull String saga, String rolSociety, MistbornType mistbornType, List<String> capacidades) {
+        super(name_Character, fechaNacimiento, fechaMuerte, id_Libro_Original, titulos, saga);
         this.rolSociety = rolSociety;
         this.mistbornType = mistbornType;
-        this.alomanticPower = alomanticPower;
-        this.usesHemalurgy = usesHemalurgy;
+        this.capacidades = capacidades;
     }
 
     // Metodos
 
     @Override
     public String toString() {
-        return "MistBornCharacter{" +
-                "nameCharacter='" + super.name_Character + '\'' +
-                ", ageCharacter=" + super.age_Character +
-                ", saga='" + saga + '\'' +
-                ", rolSociety='" + rolSociety + '\'' +
-                ", mistbornType='" + mistbornType + '\'' +
-                ", alomanticPower='" + alomanticPower + '\'' +
-                ", usesHemalurgy=" + usesHemalurgy +
+        return "MistbornCharacter{" +
+                "rolSociety='" + rolSociety + '\'' +
+                ", mistbornType=" + mistbornType +
+                ", capacidades=" + capacidades +
                 ", id_Character=" + id_Character +
                 ", name_Character='" + name_Character + '\'' +
-                ", age_Character=" + age_Character +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaMuerte=" + fechaMuerte +
                 ", id_Libro_Original=" + id_Libro_Original +
+                ", titulos=" + titulos +
                 ", saga='" + saga + '\'' +
-                ", listaLibrosAparece=" + listaLibrosAparece +
                 '}';
     }
 
 
     // Getter and Setter
+
+
+    public List<String> getCapacidades() {
+        return capacidades;
+    }
+
+    public void setCapacidades(List<String> capacidades) {
+        this.capacidades = capacidades;
+    }
 
     @Override
     public String getSaga() {
@@ -80,19 +83,4 @@ public class MistbornCharacter extends CCharacter {
         this.mistbornType = mistbornType;
     }
 
-    public String getAlomanticPower() {
-        return alomanticPower;
-    }
-
-    public void setAlomanticPower(String alomanticPower) {
-        this.alomanticPower = alomanticPower;
-    }
-
-    public Boolean getUsesHemalurgy() {
-        return usesHemalurgy;
-    }
-
-    public void setUsesHemalurgy(Boolean usesHemalurgy) {
-        this.usesHemalurgy = usesHemalurgy;
-    }
 }

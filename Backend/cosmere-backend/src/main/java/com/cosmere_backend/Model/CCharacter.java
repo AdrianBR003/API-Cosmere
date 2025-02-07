@@ -17,9 +17,11 @@ public abstract class CCharacter {
     protected Long id_Character;
     @NonNull
     protected String name_Character;
-    protected int age_Character;
+    protected int fechaNacimiento;
+    protected int fechaMuerte;
     @NonNull
     protected Long id_Libro_Original;
+    protected List<String> titulos;
     @NonNull
     protected String saga;
     @ManyToMany
@@ -34,10 +36,12 @@ public abstract class CCharacter {
 
     public CCharacter(){}
 
-    public CCharacter(@NonNull String name_Character, int age_Character, @NonNull Long id_Libro_Original, @NonNull String saga) {
+    public CCharacter( @NonNull String name_Character, int fechaNacimiento, int fechaMuerte, @NonNull Long id_Libro_Original, List<String> titulos, @NonNull String saga) {
         this.name_Character = name_Character;
-        this.age_Character = age_Character;
+        this.fechaNacimiento = fechaNacimiento;
+        this.fechaMuerte = fechaMuerte;
         this.id_Libro_Original = id_Libro_Original;
+        this.titulos = titulos;
         this.saga = saga;
     }
 
@@ -65,7 +69,7 @@ public abstract class CCharacter {
         return "CCharacter{" +
                 "id_Character=" + id_Character +
                 ", name_Character='" + name_Character + '\'' +
-                ", age_Character=" + age_Character +
+                ", age_Character=" + fechaNacimiento +
                 ", saga_Character= " + saga +
                 ", id_Libro_Original=" + id_Libro_Original +
                 '}';
@@ -74,6 +78,29 @@ public abstract class CCharacter {
     // Getter and Setter (Bug Lombook)
 
 
+    public int getFechaMuerte() {
+        return fechaMuerte;
+    }
+
+    public void setFechaMuerte(int fechaMuerte) {
+        this.fechaMuerte = fechaMuerte;
+    }
+
+    public List<String> getTitulos() {
+        return titulos;
+    }
+
+    public void setTitulos(List<String> titulos) {
+        this.titulos = titulos;
+    }
+
+    public List<Book> getListaLibrosAparece() {
+        return listaLibrosAparece;
+    }
+
+    public void setListaLibrosAparece(List<Book> listaLibrosAparece) {
+        this.listaLibrosAparece = listaLibrosAparece;
+    }
 
     public Long getId_Character() {
         return id_Character;
@@ -91,12 +118,12 @@ public abstract class CCharacter {
         this.name_Character = name_Character;
     }
 
-    public int getAge_Character() {
-        return age_Character;
+    public int getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setAge_Character(int age_Character) {
-        this.age_Character = age_Character;
+    public void setFechaNacimiento(int fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public @NonNull Long getId_Libro_Original() {

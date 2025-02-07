@@ -1,12 +1,14 @@
 package com.cosmere_backend.API.DTO;
 
-import jakarta.persistence.Entity;
 
+import java.util.List;
 
 public class CCharacterDTO {
     private Long id_Character;
     private String name_Character;
-    private int age_Character;
+    private int fechaNacimiento;
+    private int fechaMuerte;
+    private List<String> titulos;
     private Long id_libro_Original;
     private String saga_inicial;
 
@@ -16,26 +18,28 @@ public class CCharacterDTO {
         this.name_Character = nameCharacter;
     }
 
-    public CCharacterDTO(Long id_Character, String name_Character, int age_Character, Long id_libro_Original, String sagaInicial) {
+    public CCharacterDTO(Long id_Character, String name_Character, int fechaNacimiento, int fechaMuerte, List<String> titulos, Long id_libro_Original, String saga_inicial) {
         this.id_Character = id_Character;
         this.name_Character = name_Character;
-        this.age_Character = age_Character;
+        this.fechaNacimiento = fechaNacimiento;
+        this.fechaMuerte = fechaMuerte;
+        this.titulos = titulos;
         this.id_libro_Original = id_libro_Original;
-        this.saga_inicial = sagaInicial;
+        this.saga_inicial = saga_inicial;
     }
 
     // Metodos
-
-
 
     @Override
     public String toString() {
         return "CCharacterDTO{" +
                 "id_Character=" + id_Character +
                 ", name_Character='" + name_Character + '\'' +
-                ", age_Character=" + age_Character +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaMuerte=" + fechaMuerte +
+                ", titulos=" + titulos +
                 ", id_libro_Original=" + id_libro_Original +
-                ", saga_Inicial =" + saga_inicial+
+                ", saga_inicial='" + saga_inicial + '\'' +
                 '}';
     }
 
@@ -43,12 +47,12 @@ public class CCharacterDTO {
     // Getter and Setter
 
 
-    public int getAge_Character() {
-        return age_Character;
+    public int getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setAge_Character(int age_Character) {
-        this.age_Character = age_Character;
+    public void setFechaNacimiento(int fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public Long getId_libro_Original() {

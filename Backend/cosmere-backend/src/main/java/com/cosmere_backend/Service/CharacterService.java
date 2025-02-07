@@ -34,7 +34,7 @@ public class CharacterService {
     public List<CCharacterDTO> getAllCharacters() {
         return icCharacterRepository.findAll()
                 .stream()
-                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getAge_Character(), character.getId_Libro_Original(), character.getSaga()))
+                .map(character -> new CCharacterDTO(character.getId_Character(), character.getName_Character(), character.getFechaNacimiento(), character.getFechaMuerte(), character.getTitulos(), character.getId_Libro_Original(), character.getSaga()))
                 .collect(Collectors.toList());
     }
 
@@ -59,20 +59,20 @@ public class CharacterService {
             return new MistBornDTO(
                     mistbornCharacter.getId_Character(),
                     mistbornCharacter.getName_Character(),
-                    mistbornCharacter.getAge_Character(),
+                    mistbornCharacter.getFechaNacimiento(),
+                    mistbornCharacter.getFechaMuerte(),
+                    mistbornCharacter.getTitulos(),
                     mistbornCharacter.getId_Libro_Original(),
                     mistbornCharacter.getSaga(),
                     mistbornCharacter.getRolSociety(),
-                    mistbornCharacter.getMistbornType(),
-                    mistbornCharacter.getAlomanticPower(),
-                    mistbornCharacter.getUsesHemalurgy()
+                    mistbornCharacter.getMistbornType()
             );
         } else if (character instanceof StormlightCharacter stormlightCharacter) {
             System.out.println("KALADIIINNNNNN STORMMMM");
             return new StormLightDTO(
                     stormlightCharacter.getId_Character(),
                     stormlightCharacter.getName_Character(),
-                    stormlightCharacter.getAge_Character(),
+                    stormlightCharacter.getFechaNacimiento(),
                     stormlightCharacter.getId_Libro_Original(),
                     stormlightCharacter.getSaga(),
                     stormlightCharacter.getRadiantOrder(),
@@ -84,7 +84,7 @@ public class CharacterService {
             return new CCharacterDTO(
                     character.getId_Character(),
                     character.getName_Character(),
-                    character.getAge_Character(),
+                    character.getFechaNacimiento(),
                     character.getId_Libro_Original(),
                     character.getSaga()
             );

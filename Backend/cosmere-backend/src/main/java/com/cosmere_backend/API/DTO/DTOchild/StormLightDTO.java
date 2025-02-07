@@ -5,6 +5,8 @@ import com.cosmere_backend.Model.StormLight.StormlightType;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
+import java.util.List;
+
 public class StormLightDTO extends CCharacterDTO {
 
     @Enumerated(EnumType.STRING)
@@ -15,12 +17,13 @@ public class StormLightDTO extends CCharacterDTO {
 
     private Integer stormlightLevel;
 
-    public StormLightDTO(Long id_Character, String name_Character, int age_Character, Long id_libro_Original, String sagaInicial, StormlightType radiantOrder , Boolean bondedSpren, Integer stormlightLevel) {
-        super(id_Character, name_Character, age_Character, id_libro_Original, sagaInicial);
+    public StormLightDTO(Long id_Character, String name_Character, int fechaNacimiento, int fechaMuerte, List<String> titulos, Long id_libro_Original, String saga_inicial, StormlightType radiantOrder, Boolean bondedSpren, Integer stormlightLevel) {
+        super(id_Character, name_Character, fechaNacimiento, fechaMuerte, titulos, id_libro_Original, saga_inicial);
         this.radiantOrder = radiantOrder;
         this.bondedSpren = bondedSpren;
         this.stormlightLevel = stormlightLevel;
     }
+
     // Metodos
 
 

@@ -10,6 +10,10 @@ import com.cosmere_backend.Repository.ICCharacterRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.awt.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 @Component
 public class DataLoaderInit implements CommandLineRunner {
     
@@ -27,11 +31,11 @@ public class DataLoaderInit implements CommandLineRunner {
         // Inserta datos iniciales si no existen
         if (characterRepository.count() == 0 && bookRepository.count()==0) {
 
-            MistbornCharacter kelsier = new MistbornCharacter("Kelsier",20,0L,"ladron", MistbornType.MISTBORN,"All",false);
-            MistbornCharacter hammond = new MistbornCharacter("Hammond",20,0L,"ladron",MistbornType.MISTBORN,"All",false);
-            MistbornCharacter marsh = new MistbornCharacter("Marsh",20,0L,"inquisidor",MistbornType.INQUISITOR,"All",true);
-            StormlightCharacter kaladin = new StormlightCharacter("Kaladin",19,0L,"StormLight", StormlightType.CORREDOR_VIENTO,true,4);
-            MistbornCharacter vin = new MistbornCharacter("Vin",19,0L,"ladron",MistbornType.MISTBORN,"All",false);
+            MistbornCharacter kelsier = new MistbornCharacter("Kelsier",984,1022,1L, Arrays.asList("Superviviente de Hatshin", ""),"MistBorn","Ladron",MistbornType.MISTBORN,Arrays.asList("Hemalurgia", "Nacido de la Bruma"));
+            MistbornCharacter hammond = new MistbornCharacter("Hammond",984,1022,1L, Arrays.asList("Banda del Superviviente", ""),"MistBorn","Ladron",MistbornType.MISTBORN,Arrays.asList("Hemalurgia", "Nacido de la Bruma"));
+            MistbornCharacter vin = new MistbornCharacter("Vin",984,1022,1L, Arrays.asList("La Guerrera del Imperio Final", ""),"MistBorn","Ladron",MistbornType.MISTBORN,Arrays.asList("Hemalurgia", "Nacido de la Bruma"));
+            StormlightCharacter kaladin = new StormlightCharacter("Kaladin",1153,0,1L,Arrays.asList("Bendito por la Tormenta", "Heraldo del Viento"),"StormLight", StormlightType.CORREDOR_VIENTO,true,4);
+            MistbornCharacter marsh = new MistbornCharacter("Marsh",984,1022,1L, Arrays.asList("Inquisidor del imperio final", ""),"MistBorn","Ladron",MistbornType.MISTBORN,Arrays.asList("Hemalurgia", "Nacido de la Bruma"));
 
 
 
