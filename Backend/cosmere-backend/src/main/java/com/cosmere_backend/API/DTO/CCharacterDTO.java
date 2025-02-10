@@ -1,15 +1,33 @@
 package com.cosmere_backend.API.DTO;
 
 
+import com.cosmere_backend.API.DTO.DTOchild.MistBornDTO;
+import com.cosmere_backend.API.DTO.DTOchild.StormLightDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.util.List;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = MistBornDTO.class, name = "mistborn"),
+        @JsonSubTypes.Type(value = StormLightDTO.class, name = "stormlight")
+})
 public class CCharacterDTO {
+    @JsonProperty
     private Long id_Character;
+    @JsonProperty
     private String name_Character;
+    @JsonProperty
     private int fechaNacimiento;
+    @JsonProperty
     private int fechaMuerte;
+    @JsonProperty
     private List<String> titulos;
+    @JsonProperty
     private Long id_libro_Original;
+    @JsonProperty
     private String saga_inicial;
 
 

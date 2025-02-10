@@ -10,9 +10,9 @@ import com.cosmere_backend.Model.MistBorn.MistbornCharacter;
 import com.cosmere_backend.Model.StormLight.StormlightCharacter;
 import com.cosmere_backend.Repository.IBookRepository;
 import com.cosmere_backend.Repository.ICCharacterRepository;
+import com.cosmere_backend.Repository.IRCharacterBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cosmere_backend.Repository.IRCharacterBookRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,6 +56,9 @@ public class CharacterService {
 
         // Verificar el tipo de subclase
         if (character instanceof MistbornCharacter mistbornCharacter) {
+            System.out.println("Devolviendo MistBornCharacter DTO");
+            System.out.println(mistbornCharacter.toString());
+
             return new MistBornDTO(
                     mistbornCharacter.getId_Character(),
                     mistbornCharacter.getName_Character(),
@@ -68,7 +71,7 @@ public class CharacterService {
                     mistbornCharacter.getRolSociety(),
                     mistbornCharacter.getCapacidades());
         } else if (character instanceof StormlightCharacter stormlightCharacter) {
-            System.out.println("KALADIIINNNNNN STORMMMM");
+            System.out.println("Devolviendo StormLightCharacter DTO");
             return new StormLightDTO(
                     stormlightCharacter.getId_Character(),
                     stormlightCharacter.getName_Character(),

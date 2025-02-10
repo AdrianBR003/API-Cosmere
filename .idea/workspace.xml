@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/ListToJsonConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/CCharacterDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/DTOchild/MistBornDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/API/DTO/DTOchild/MistBornDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/CCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistbornCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Model/MistBorn/MistbornCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionInf.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionInf.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/lib/utils/fetchCharacterId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/lib/utils/fetchCharacterId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/lib/utils/fetchCharacters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/lib/utils/fetchCharacters.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/pages/characters/[id].astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/pages/characters/[id].astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

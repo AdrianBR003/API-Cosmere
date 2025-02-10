@@ -1,4 +1,13 @@
 ---
+import type { Character } from '@lib/utils/fetchCharacterId';
+
+interface Props {
+  character: Character;
+}
+
+const { character } = Astro.props;
+console.log(character);
+console.log(character.name_Character);
 ---
 
 <section>
@@ -7,12 +16,12 @@
     </div>
     <div id="contDesc">
         <div id="contDInfo">
-            <h3>Nombre</h3>
-            <p>asddddddddddddddddddddddddddddddddddd</p>
+            <h3>{character.name_Character}</h3>
+            <p>{character.capacidades}</p>
         </div>
 
         <div id="contEnl">
-            <p>contENL</p>
+            <p>{character.name_Character}</p>
         </div>
     </div>
     
@@ -21,6 +30,10 @@
 <style>
     *{
         border: 1px solid white;
+    }
+
+    h3 {
+        color: aqua;
     }
 
     section{

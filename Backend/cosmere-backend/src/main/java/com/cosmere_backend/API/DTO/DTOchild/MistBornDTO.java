@@ -2,13 +2,17 @@ package com.cosmere_backend.API.DTO.DTOchild;
 
 import com.cosmere_backend.API.DTO.CCharacterDTO;
 import com.cosmere_backend.Model.MistBorn.MistbornType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
 public class MistBornDTO extends CCharacterDTO {
 
+    @JsonProperty
     private MistbornType mistbornType;
+    @JsonProperty
     private String rolSociety;
+    @JsonProperty
     private List<String> capacidades;
 
     public MistBornDTO(Long id, String name_Character, int fechaNacimiento, int fechaMuerte, List<String> titulos, Long id_libro_Original, String saga_inicial, MistbornType mistbornType, String rolSociety, List<String> capacidades) {
