@@ -2,22 +2,18 @@ package com.cosmere_backend.API.DTO.DTOchild;
 
 import com.cosmere_backend.API.DTO.CCharacterDTO;
 import com.cosmere_backend.Model.MistBorn.MistbornType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 import java.util.List;
 
 public class MistBornDTO extends CCharacterDTO {
 
     private MistbornType mistbornType;
-    private String alomanticPower;
     private String rolSociety;
     private List<String> capacidades;
 
-    public MistBornDTO(Long id_Character, String name_Character, int fechaNacimiento, int fechaMuerte, List<String> titulos, Long id_libro_Original, String saga_inicial, MistbornType mistbornType, String alomanticPower, String rolSociety, List<String> capacidades) {
-        super(id_Character, name_Character, fechaNacimiento, fechaMuerte, titulos, id_libro_Original, saga_inicial);
+    public MistBornDTO(Long id, String name_Character, int fechaNacimiento, int fechaMuerte, List<String> titulos, Long id_libro_Original, String saga_inicial, MistbornType mistbornType, String rolSociety, List<String> capacidades) {
+        super(id, name_Character, fechaNacimiento, fechaMuerte, titulos, id_libro_Original, saga_inicial);
         this.mistbornType = mistbornType;
-        this.alomanticPower = alomanticPower;
         this.rolSociety = rolSociety;
         this.capacidades = capacidades;
     }
@@ -26,7 +22,6 @@ public class MistBornDTO extends CCharacterDTO {
     public String toString() {
         return "MistBornDTO{" +
                 "mistbornType=" + mistbornType +
-                ", alomanticPower='" + alomanticPower + '\'' +
                 ", rolSociety='" + rolSociety + '\'' +
                 ", capacidades=" + capacidades +
                 '}';
@@ -58,13 +53,5 @@ public class MistBornDTO extends CCharacterDTO {
 
     public void setMistbornType(MistbornType mistbornType) {
         this.mistbornType = mistbornType;
-    }
-
-    public String getAlomanticPower() {
-        return alomanticPower;
-    }
-
-    public void setAlomanticPower(String alomanticPower) {
-        this.alomanticPower = alomanticPower;
     }
 }

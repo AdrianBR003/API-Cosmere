@@ -1,6 +1,6 @@
 package com.cosmere_backend.Model.MistBorn;
 
-import com.cosmere_backend.Model.Book;
+import com.cosmere_backend.API.ListToJsonConverter;
 import com.cosmere_backend.Model.CCharacter;
 import jakarta.persistence.*;
 import lombok.NonNull;
@@ -15,6 +15,9 @@ public class MistbornCharacter extends CCharacter {
     private String rolSociety;
     @Enumerated(EnumType.STRING)
     private MistbornType mistbornType;
+
+    @Convert(converter = ListToJsonConverter.class)
+    @Column(columnDefinition = "TEXT")
     private List<String> capacidades;
 
     public MistbornCharacter() {
@@ -47,6 +50,7 @@ public class MistbornCharacter extends CCharacter {
 
 
     // Getter and Setter
+
 
 
     public List<String> getCapacidades() {

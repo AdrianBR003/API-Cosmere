@@ -64,15 +64,17 @@ public class CharacterService {
                     mistbornCharacter.getTitulos(),
                     mistbornCharacter.getId_Libro_Original(),
                     mistbornCharacter.getSaga(),
+                    mistbornCharacter.getMistbornType(),
                     mistbornCharacter.getRolSociety(),
-                    mistbornCharacter.getMistbornType()
-            );
+                    mistbornCharacter.getCapacidades());
         } else if (character instanceof StormlightCharacter stormlightCharacter) {
             System.out.println("KALADIIINNNNNN STORMMMM");
             return new StormLightDTO(
                     stormlightCharacter.getId_Character(),
                     stormlightCharacter.getName_Character(),
                     stormlightCharacter.getFechaNacimiento(),
+                    stormlightCharacter.getFechaMuerte(),
+                    stormlightCharacter.getTitulos(),
                     stormlightCharacter.getId_Libro_Original(),
                     stormlightCharacter.getSaga(),
                     stormlightCharacter.getRadiantOrder(),
@@ -85,6 +87,8 @@ public class CharacterService {
                     character.getId_Character(),
                     character.getName_Character(),
                     character.getFechaNacimiento(),
+                    character.getFechaMuerte(),
+                    character.getTitulos(),
                     character.getId_Libro_Original(),
                     character.getSaga()
             );

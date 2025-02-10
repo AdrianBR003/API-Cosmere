@@ -1,5 +1,6 @@
 package com.cosmere_backend.Model;
 
+import com.cosmere_backend.API.ListToJsonConverter;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,7 +22,11 @@ public abstract class CCharacter {
     protected int fechaMuerte;
     @NonNull
     protected Long id_Libro_Original;
+
+    @Convert(converter = ListToJsonConverter.class)
+    @Column(columnDefinition ="TEXT")
     protected List<String> titulos;
+
     @NonNull
     protected String saga;
     @ManyToMany
@@ -30,9 +35,9 @@ public abstract class CCharacter {
             joinColumns = @JoinColumn(name = "id_Character"),
             inverseJoinColumns = @JoinColumn(name = "id_Book")
     )
+    @Convert(converter = ListToJsonConverter.class)
+    @Column(columnDefinition = "TEXT") // JSON
     protected List<Book> listaLibrosAparece = new ArrayList<>();
-
-    // Constructores adicionales...
 
     public CCharacter(){}
 
@@ -48,8 +53,6 @@ public abstract class CCharacter {
     public CCharacter(@NonNull String nameCharacter) {
         this.name_Character = nameCharacter;
     }
-
-    // Métodos adicionales...
 
     public void addBook(Book book) {
         if (!listaLibrosAparece.contains(book)) {
