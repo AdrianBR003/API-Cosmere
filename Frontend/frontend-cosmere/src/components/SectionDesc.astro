@@ -1,0 +1,21 @@
+---
+import "@styles/sectionContext.css";
+const { key, value } = Astro.props;
+---
+
+{
+  key.slice(0, 5).map((k: string, index: number) => {
+    const val = value[index];
+    console.log("Value= ", val)
+    if (val == null || val === "") return null;
+    return (
+      <div class="contentValor">
+        
+          <p class="key">{k}:{" "}</p>
+          <p class="value">{Array.isArray(val) ? <Astro.self items={val} /> : val}</p>
+      </div>
+    );
+  })
+}
+
+  

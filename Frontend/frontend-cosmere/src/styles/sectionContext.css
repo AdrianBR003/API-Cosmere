@@ -1,0 +1,56 @@
+
+  h3 {
+    color: goldenrod;
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+  }
+
+  .key {
+    color: goldenrod;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    width: 90.5%;
+    height: 400px;
+    margin: 20px auto;
+  }
+
+  #contImg {
+    flex: 0 1 auto;
+    display: flex;
+    box-shadow: 5px 2px 4px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  img {
+    flex: 2 1 auto;
+    background-size: auto;
+  }
+
+  #contDesc {
+    flex: 1 1 auto;
+    display: flex;
+    margin: 0 0 0 20px;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .contentAll {
+    background-color: #1a2a3a;
+    border: 1px solid #c2a063;
+  }
+
+  .contentValor {
+    flex: 1 1 auto;
+    padding-left: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  #contEnl {
+    flex: 1 1 auto;
+  }

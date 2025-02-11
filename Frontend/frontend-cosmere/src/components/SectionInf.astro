@@ -1,73 +1,35 @@
 ---
-import type { Character } from '@lib/utils/fetchCharacterId';
+import "@styles/sectionContext.css";
+
+import type { Character } from "@lib/utils/fetchCharacterId";
+import SectionDesc from "@components/SectionDesc.astro";
 
 interface Props {
   character: Character;
 }
 
 const { character } = Astro.props;
-console.log(character);
 console.log(character.name_Character);
+console.log("MistBornType: ", character.mistBornType);
 ---
 
 <section>
-    <div id="contImg">
-        <img src="/assets/portadas/portada_1.jpg" /> 
+  <div id="contImg">
+    <img src="/assets/portadas/portada_1.jpg" />
+  </div>
+  <div id="contDesc">
+    <div class="contentAll">
+      <SectionDesc
+        key={["Nombre", "Fecha de Muerte", "Fecha de Nacimiento", "Spren", "MistBorn Type"]}
+        value={[character.name_Character, character.fechaMuerte, character.fechaNacimiento, character.bondedSpren, character.mistBornType]}
+      />
     </div>
-    <div id="contDesc">
-        <div id="contDInfo">
-            <h3>{character.name_Character}</h3>
-            <p>{character.capacidades}</p>
-        </div>
-
-        <div id="contEnl">
-            <p>{character.name_Character}</p>
-        </div>
+    <div class="contentAll">
+      <SectionDesc
+        key={["Nombre"]}
+        value={[character.name_Character]}
+      />
     </div>
-    
+  </div>
+  
 </section>
-
-<style>
-    *{
-        border: 1px solid white;
-    }
-
-    h3 {
-        color: aqua;
-    }
-
-    section{
-        display: flex;
-        flex-direction: row; 
-        width: 90.5%;
-        height: 400px;
-        margin: 20px auto; 
-    }
-
-    #contImg{
-        flex: 0 1 auto;
-        display: flex;
-    }
-
-    img{
-        flex: 2 1 auto;
-        background-size: auto;
-    }
-
-    #contDesc{
-        flex: 1 1 auto; 
-        display: flex;
-        margin: 0 0 0 20px;
-        flex-direction: column;
-    }
-
-    #contDInfo{
-        flex: 1 1 auto; 
-        background-color: aliceblue;
-    }
-
-    #contEnl{
-        flex: 1 1 auto; 
-    }    
-
-</style>

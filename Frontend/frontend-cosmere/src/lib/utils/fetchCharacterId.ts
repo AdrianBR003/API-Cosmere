@@ -32,13 +32,13 @@ export async function fetchCharacterId(id: number): Promise<any> {
     fechaNacimiento: rawData.fechaNacimiento,
     fechaMuerte: rawData.fechaMuerte ?? null,
     titulos: rawData.titulos ?? [],
-    id_libro_original: rawData.id_libro_original,
-    saga: rawData.saga,
-    mistBornType: rawData.mistBornType ?? null,
+    id_libro_original: rawData.id_libro_Original, 
+    saga: rawData.saga_inicial, 
+    mistBornType: rawData.mistbornType ?? null,
     rolSociety: rawData.rolSociety ?? null,
     capacidades: rawData.capacidades ?? [],
     radiantOrder: rawData.radiantOrder ?? null,
-    bondedSpren: rawData.bondedSpren ?? false,
+    bondedSpren: rawData.bondedSpren ?? null,
     stormlightLevel: rawData.stormlightLevel ?? 0,
   };
 }
