@@ -19,7 +19,7 @@ const imageUrl = `${baseImageUrl}/character_${character.name_Character}.jpg`;
 const destUrl = `/characters/${character.id_Character.toString()}`;
 
 ---
-
+<div id="containerSection">
 <section>
   <div id="contImg">
     <img src={imageUrl} alt={character.name_Character} class="card-img" />
@@ -27,8 +27,8 @@ const destUrl = `/characters/${character.id_Character.toString()}`;
   <div id="contDesc">
     <div class="contentAll">
       <SectionDesc
-        key={["Nombre", "Fecha de Muerte", "Fecha de Nacimiento", "Spren", "MistBorn Type"]}
-        value={[character.name_Character, character.fechaMuerte, character.fechaNacimiento, character.bondedSpren, character.mistBornType]}
+        key={["Nombre", "Fecha de Nacimiento", "Fecha de Muerte", "Titulos","ID Libro Original","Saga", "MistBornType","Rol Society","Capacidades", "Orden Radiante", "Spren", "Nivel Juramento Radiante"]}
+        value={[character.name_Character, character.fechaNacimiento, character.fechaMuerte, character.titulos, character.id_libro_original, character.saga, character.mistBornType,character.rolSociety, character.capacidades, character.radiantOrder,character.bondedSpren,character.stormlightLevel]}
       />
     </div>
     <div class="contentAll">
@@ -38,5 +38,6 @@ const destUrl = `/characters/${character.id_Character.toString()}`;
       />
     </div>
   </div>
+</div>
   
 </section>

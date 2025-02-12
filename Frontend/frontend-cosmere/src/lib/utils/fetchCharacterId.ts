@@ -39,6 +39,6 @@ export async function fetchCharacterId(id: number): Promise<any> {
     capacidades: rawData.capacidades ?? [],
     radiantOrder: rawData.radiantOrder ?? null,
     bondedSpren: rawData.bondedSpren ?? null,
-    stormlightLevel: rawData.stormlightLevel ?? 0,
+    stormlightLevel: rawData.stormlightLevel ?? null,
   };
 }

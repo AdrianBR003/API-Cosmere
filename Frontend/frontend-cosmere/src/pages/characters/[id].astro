@@ -1,9 +1,11 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import SectionInf from "@components/SectionInf.astro";
+
 import { fetchCharacters } from "@lib/utils/fetchCharacters";
 import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
 import type { Character } from "@lib/utils/fetchCharacters";
-import Header from "@components/Header.astro"
-import SectionInf from "@components/SectionInf.astro"
+import Header from "@components/Header.astro";
 
 export async function getStaticPaths() {
   let characters: Character[] = [];
@@ -20,7 +22,9 @@ export async function getStaticPaths() {
 
   return characters.map((character: Character) => {
     if (!character.id_Character) {
-      throw new Error(`El personaje no tiene un ID: ${JSON.stringify(character)}`);
+      throw new Error(
+        `El personaje no tiene un ID: ${JSON.stringify(character)}`
+      );
     }
     return { params: { id: character.id_Character.toString() } };
   });
@@ -34,19 +38,25 @@ if (isNaN(id)) {
 let characterObject: Character | null = null;
 
 try {
-    characterObject = await fetchCharacterId(id);
-    console.log("CharacterID Encontrado!", characterObject?.id_Character ?? "No encontrado");
+  characterObject = await fetchCharacterId(id);
+  console.log(
+    "CharacterID Encontrado!",
+    characterObject?.id_Character ?? "No encontrado"
+  );
 } catch (error) {
-    console.error("Error fetching character:", error);
+  console.error("Error fetching character:", error);
 }
 
-
-const nameCharacter = characterObject ? characterObject.name_Character : "Unknown Character";
-const sagaCharacter = characterObject ? characterObject.saga : "Unknown SagaCharacter Character"; 
+const nameCharacter = characterObject
+  ? characterObject.name_Character
+  : "Unknown Character";
+const sagaCharacter = characterObject
+  ? characterObject.saga
+  : "Unknown SagaCharacter Character";
 
 console.log("Character Object desde [id].astro ", characterObject);
-
 ---
 
-<Header title={nameCharacter} description={sagaCharacter} />
-{characterObject && <SectionInf character={characterObject} />}
+<Layout title={nameCharacter} description={sagaCharacter}>
+  {characterObject && <SectionInf character={characterObject}/>}
+</Layout>
