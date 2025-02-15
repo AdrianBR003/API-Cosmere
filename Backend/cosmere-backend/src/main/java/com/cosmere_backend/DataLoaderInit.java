@@ -10,8 +10,6 @@ import com.cosmere_backend.Repository.ICCharacterRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 @Component
@@ -88,7 +86,11 @@ public class DataLoaderInit implements CommandLineRunner {
             kaladin.addBook(twok);
             kaladin.setFirstBook(twok);
 
-
+            kelsier.addBook(epa);
+            kelsier.addBook(ehe);
+            kelsier.addBook(vyv);
+            kelsier.addBook(wod);
+            kelsier.addBook(o);
             characterRepository.save(kelsier);
             characterRepository.save(hammond);
             characterRepository.save(marsh);

@@ -7,6 +7,7 @@ import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
 import type { Character } from "@lib/utils/fetchCharacters";
 import Header from "@components/Header.astro";
 
+// Peticion Asincrona de los personajes
 export async function getStaticPaths() {
   let characters: Character[] = [];
 
@@ -37,6 +38,7 @@ if (isNaN(id)) {
 
 let characterObject: Character | null = null;
 
+// Extraer toda la información del personaje
 try {
   characterObject = await fetchCharacterId(id);
   console.log(
@@ -53,8 +55,8 @@ const nameCharacter = characterObject
 const sagaCharacter = characterObject
   ? characterObject.saga
   : "Unknown SagaCharacter Character";
-
 console.log("Character Object desde [id].astro ", characterObject);
+
 ---
 
 <Layout title={nameCharacter} description={sagaCharacter}>

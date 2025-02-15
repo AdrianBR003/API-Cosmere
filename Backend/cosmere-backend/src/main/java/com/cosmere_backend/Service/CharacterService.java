@@ -126,7 +126,7 @@ public class CharacterService {
         }
         Book book = iBookRepository.findById(character.getId_Libro_Original()).orElse(null);
         assert book != null;
-        return new BookDTO(book.getId_Book(), book.getName_Book(), book.getName_Book(), book.getPages_Book());
+        return new BookDTO(book.getId_Book(), book.getName_Book(), book.getSaga_Book(), book.getPages_Book());
     }
 
     public CCharacter createCharacter(CCharacter character) {
