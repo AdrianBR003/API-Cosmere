@@ -18,8 +18,8 @@ export interface Book {
     return {
       id_Book: rawData.id_Book,
       name_Book: rawData.name_Book,
-      saga: rawData.saga, 
-      page_Book: rawData.page_Book,
+      saga: rawData.saga_Book,  
+      page_Book: rawData.pages_Book
     };
   }
   

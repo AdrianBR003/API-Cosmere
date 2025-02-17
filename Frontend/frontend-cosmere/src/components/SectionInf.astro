@@ -1,27 +1,22 @@
 ---
 import "@styles/sectionContext.css";
-
-import type { Character } from "@lib/utils/fetchCharacterId";
-
 import SectionDesc from "@components/SectionDesc.astro";
 
+import type { Character } from "@lib/utils/fetchCharacterId";
+import type { Book } from "@lib/utils/fetchBookId";
+import Characters from "pages/characters/[characters].astro";
+
+// Definimos un tipo unión para poder recibir cualquiera de los dos objetos
+type Entity = Character | Book;
+
 interface Props {
-  character: Character;
+  entity: Entity;
 }
 
-const { character } = Astro.props;
+const { entity } = Astro.props;
 
-console.log(character.name_Character);
-console.log("MistBornType: ", character.mistBornType);
-
-// Construir la URL de la imagen
-const baseImageUrl = "/assets/characters";
-const imageUrl = `${baseImageUrl}/character_${character.name_Character}.jpg`;
-
-// Construir la URL de destino (si la necesitas para alguna navegación interna)
-const destUrl = `/characters/${character.id_Character.toString()}`;
-
-const keys = [
+// Declaramos variables comunes (keys, values, imageUrl, destUrl y un id)
+let keys = [
   "Nombre",
   "Fecha de Nacimiento",
   "Fecha de Muerte",
@@ -34,40 +29,73 @@ const keys = [
   "Orden Radiante",
   "Spren",
   "Nivel Juramento Radiante",
-  "Libros Relacionados" // Se usa para condicionar la visualización de BooksRedirect
+  "Libros Relacionados", // Se usa para condicionar la visualización de BooksRedirect
 ];
 
-const values = [
-  character.name_Character,
-  character.fechaNacimiento,
-  character.fechaMuerte,
-  character.titulos,
-  character.id_libro_original,
-  character.saga,
-  character.mistBornType,
-  character.rolSociety,
-  character.capacidades,
-  character.radiantOrder,
-  character.bondedSpren,
-  character.stormlightLevel,
-  null 
-];
+let values: (string | null)[] = [];
+let imageUrl = "";
+let destUrl = "";
+let id_Entity: number | string = "";
 
-// Extraer el id del personaje para pasárselo a BooksRedirect
-const id_Character = character.id_Character;
+if ("titulos" in entity) {
+  // Es un Character
+  const character = entity as Character;
+  console.log(character.name_Character);
+  console.log("MistBornType: ", character.mistBornType);
+  const baseImageUrl = "/assets/characters";
+  imageUrl = `${baseImageUrl}/character_${character.name_Character}.jpg`;
+  destUrl = `/characters/${character.id_Character.toString()}`;
+  console.log("URL Imagen: ", imageUrl);
+  values = [
+    character.name_Character,
+    character.fechaNacimiento ? character.fechaNacimiento.toString() : null,
+    character.fechaMuerte ? character.fechaMuerte.toString() : null,
+    character.titulos ? character.titulos.toString() : null,
+    character.id_libro_original ? character.id_libro_original.toString() : null,
+    character.saga ? character.saga.toString() : null,
+    character.mistBornType ? character.mistBornType.toString() : null,
+    character.rolSociety ? character.rolSociety.toString() : null,
+    character.capacidades ? character.capacidades.toString() : null,
+    character.radiantOrder ? character.radiantOrder.toString() : null,
+    character.bondedSpren ? character.bondedSpren.toString() : null,
+    character.stormlightLevel ? character.stormlightLevel.toString() : null,
+    null,
+  ];
+  id_Entity = character.id_Character;
+} else {
+  // Es un Book
+  const book = entity as Book;
+  console.log(book.name_Book);
+  const baseImageUrl = "/assets/portadas";
+  imageUrl = `${baseImageUrl}/portada_${book.id_Book.toString()}.jpg`;
+  destUrl = imageUrl; 
+  keys = ["Título", "Páginas", "Saga"];
+
+  values = [
+    book.name_Book,
+    book.page_Book ? book.page_Book.toString() : null,
+    book.saga,
+  ];
+  id_Entity = book.id_Book;
+}
 ---
 
 <div id="containerSection">
   <section>
     <div id="contImg">
-      <img src={imageUrl} alt={character.name_Character} class="card-img" />
+      <img
+        src={imageUrl}
+        alt={"mistBornType" in entity ? entity.name_Character : "No disponible"}
+        class="card-img"
+      />
     </div>
     <div id="contDesc">
       <div class="contentAll">
         <SectionDesc
           key={keys}
           value={values}
-          id_Character={id_Character}
+          id_Character={"mistBornType" in entity ? id_Entity : undefined}
+          id_Book={"mistBornType" in entity ? undefined : id_Entity}
         />
       </div>
     </div>

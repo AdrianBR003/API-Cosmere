@@ -2,16 +2,16 @@
 import Layout from "@layouts/Layout.astro";
 import SectionInf from "@components/SectionInf.astro";
 
-import { fetchCharacters } from "@lib/utils/fetchCharacters";
-import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
-import type { Character } from "@lib/utils/fetchCharacters";
+import { fetchBooks } from "@lib/utils/fetchBooks";
+import { fetchBookId } from "@lib/utils/fetchBookId";
+import type { Book } from "@lib/utils/fetchBooks";
 
 // Peticion Asincrona de los personajes
 export async function getStaticPaths() {
-  let characters: Character[] = [];
+  let characters: Book[] = [];
 
   try {
-    characters = await fetchCharacters();
+    characters = await fetchBooks();
   } catch (error) {
     console.error("Error al obtener personajes:", error);
   }
@@ -20,13 +20,13 @@ export async function getStaticPaths() {
     throw new Error("fetchCharacters() no devolvió datos");
   }
 
-  return characters.map((character: Character) => {
-    if (!character.id_Character) {
+  return characters.map((character: Book) => {
+    if (!character.id_Book) {
       throw new Error(
         `El personaje no tiene un ID: ${JSON.stringify(character)}`
       );
     }
-    return { params: { books: character.id_Character.toString() } };
+    return { params: { books: character.id_Book.toString() } };
   });
 }
 
@@ -35,29 +35,30 @@ if (isNaN(id)) {
   throw new Error(`ID inválido recibido: ${Astro.params?.books}`);
 }
 
-let characterObject: Character | null = null;
+let bookObject: Book | null = null;
 
-// Extraer toda la información del personaje
+// Extraer toda la información del libro
 try {
-  characterObject = await fetchCharacterId(id);
+  bookObject = await fetchBookId(id);
   console.log(
-    "CharacterID Encontrado!",
-    characterObject?.id_Character ?? "No encontrado"
+    "BookID Encontrado!",
+    bookObject?.id_Book ?? "No encontrado"
   );
 } catch (error) {
   console.error("Error fetching character:", error);
 }
 
-const nameCharacter = characterObject
-  ? characterObject.name_Character
+const nameCharacter = bookObject
+  ? bookObject.name_Book
   : "Unknown Character";
-const sagaCharacter = characterObject
-  ? characterObject.saga
+const sagaCharacter = bookObject
+  ? bookObject.saga
   : "Unknown SagaCharacter Character";
-console.log("Character Object desde [id].astro ", characterObject);
+
+console.log("Book Object desde [book].astro ", bookObject);
 
 ---
 
 <Layout title={nameCharacter} description={sagaCharacter}>
-  {characterObject && <SectionInf character={characterObject}/>}
+    {bookObject && <SectionInf entity={bookObject}/>} 
 </Layout>
