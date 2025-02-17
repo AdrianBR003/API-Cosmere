@@ -1,60 +1,86 @@
 ---
 import "@styles/sectionContext.css";
-import BooksRedirect from "@components/BooksRedirect.jsx";
+import EntityRedirect from "@components/EntityRedirect";
+
+// Funciones para obtener elementos relacionados
 import { fetchBooksByCharacter } from "@lib/utils/fetchBooksbyCId";
-import type { Book } from "@lib/utils/fetchBooksbyCId";
+import { fetchCharacterByB } from "@lib/utils/fetchCharactersByB"; // función hipotética
 
-const { key, value, id_Character } = Astro.props;
+// Importamos los tipos para Book y Character
+import type { Book } from "@lib/utils/fetchBookId";
+import type { Character } from "@lib/utils/fetchCharacterId";
 
-// Se determina si existe la clave "Libros Relacionados"
-const hasBooksField = key.includes("Libros Relacionados");
+// Recibimos por props: key, value y entity
+const { key, value, entity } = Astro.props;
 
-let books: Book[] = [];
-if (id_Character && hasBooksField) {
-  books = await fetchBooksByCharacter(id_Character);
+// Asegurarse de que entity y key están definidos
+if (!entity) {
+  throw new Error("No se recibió la entidad");
+}
+if (!Array.isArray(key)) {
+  throw new Error("La prop key debe ser un array");
+}
+
+// Determinamos el campo relacionado según lo que aparece en el array key
+let relatedField = "";
+if (key.includes("Libros Relacionados")) {
+  relatedField = "Libros Relacionados";
+  console.log("Es un Character: ", key);
+} else if (key.includes("Characters Relacionados")) {
+  relatedField = "Characters Relacionados";
+  console.log("Es un Book: ", key);
+
+}
+
+let relatedItems: (Book | Character)[] = [];
+if (relatedField === "Libros Relacionados" && entity && "titulos" in entity) {
+  // Es un Character: obtenemos libros relacionados
+  relatedItems = (await fetchBooksByCharacter(entity.id_Character)) as unknown as (Book | Character)[];
+} else if (relatedField === "Characters Relacionados" && entity && "page_Book" in entity) {
+  // Es un Book: obtenemos personajes relacionados
+  relatedItems = await fetchCharacterByB(entity.id_Book);
 }
 ---
 
-<!-- Renderiza el resto del contenido (los otros campos) aquí -->
-{
-  Array.isArray(key)
-    ? key.slice(0, 10).map((k, index) => {
-        const val = value[index];
-        if (val == null || val === "") return null;
-        const isLink = k.includes("|e");
-        return (
-          <div class="contentValor">
-            <p class="key">{k.replace("|e", "")}:</p>
-            {isLink ? (
-              Array.isArray(val) ? (
-                <div class="value">
-                  {val.map((item, idx) => (
-                    <div class="enl_cont">
-                      <a href="#">{item}</a>
-                      <p>↗</p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <a class="value" href="#">
-                  {val}
-                </a>
-              )
+<!-- Renderiza los campos principales (los otros campos) -->
+{Array.isArray(key)
+  ? key.slice(0, 10).map((k, index) => {
+      const val = value[index];
+      if (val == null || val === "") return null;
+      const isLink = k.includes("|e");
+      return (
+        <div class="contentValor">
+          <p class="key">{k.replace("|e", "")}:</p>
+          {isLink ? (
+            Array.isArray(val) ? (
+              <div class="value">
+                {val.map((item, idx) => (
+                  <div class="enl_cont">
+                    <a href="#">{item}</a>
+                    <p>↗</p>
+                  </div>
+                ))}
+              </div>
             ) : (
-              <p class="value">
-                {Array.isArray(val)
-                  ? val.map((item, idx) => <span>{item}</span>)
-                  : val}
-              </p>
-            )}
-          </div>
-        );
-      })
-    : null
-}
+              <a class="value" href="#">
+                {val}
+              </a>
+            )
+          ) : (
+            <p class="value">
+              {Array.isArray(val)
+                ? val.map((item, idx) => <span>{item}</span>)
+                : val}
+            </p>
+          )}
+        </div>
+      );
+    })
+  : null}
 
+<!-- Renderiza el componente de redirección si existe el campo relacionado y hay elementos -->
 <div>
-  {hasBooksField && books.length > 0 && (
-    <BooksRedirect books={books} client:load />
+  {relatedField && relatedItems.length > 0 && (
+    <EntityRedirect items={relatedItems} client:load />
   )}
 </div>

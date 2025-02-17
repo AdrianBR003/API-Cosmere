@@ -40,25 +40,19 @@ let bookObject: Book | null = null;
 // Extraer toda la información del libro
 try {
   bookObject = await fetchBookId(id);
-  console.log(
-    "BookID Encontrado!",
-    bookObject?.id_Book ?? "No encontrado"
-  );
+  console.log("BookID Encontrado!", bookObject?.id_Book ?? "No encontrado");
 } catch (error) {
   console.error("Error fetching character:", error);
 }
 
-const nameCharacter = bookObject
-  ? bookObject.name_Book
-  : "Unknown Character";
-const sagaCharacter = bookObject
+const nameBook = bookObject ? bookObject.name_Book : "Unknown Character";
+const sagaBook = bookObject
   ? bookObject.saga
   : "Unknown SagaCharacter Character";
 
 console.log("Book Object desde [book].astro ", bookObject);
-
 ---
 
-<Layout title={nameCharacter} description={sagaCharacter}>
-    {bookObject && <SectionInf entity={bookObject}/>} 
-</Layout>
+<Layout title={nameBook} description={sagaBook}>
+    {bookObject && <SectionInf entity={bookObject}/>}
+  </Layout>

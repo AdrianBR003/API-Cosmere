@@ -49,6 +49,8 @@ img {
   flex: 3 1 auto;
   white-space: nowrap;
   overflow: auto  ;
+  display: flex;
+  flex-direction: column;
 }
 .contentValor:has(.value:only-child) {
   align-items: center;
@@ -60,7 +62,6 @@ img {
   padding-left: 15px;
   display: flex;
   gap: 10px;
-  overflow: auto;
   align-items: center;
 }
 
@@ -83,6 +84,7 @@ img {
   overflow-x: auto;
   flex: 1 1 auto;
   padding-left: 17px;
+  padding-right: 15px;
   display: flex;
   gap: 10px;
   align-items: center;  
@@ -110,7 +112,7 @@ img {
 .enl_cont{
   flex: 1 1 auto;
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   align-items: center;}
 
 a {
