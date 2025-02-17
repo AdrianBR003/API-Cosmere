@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec6c6f7f-b71b-4ebe-ac90-ad33dc206c1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/DataLoaderInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/cosmere-backend/src/main/java/com/cosmere_backend/Service/CharacterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionDesc.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionDesc.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionInf.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/components/SectionInf.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/layouts/Layout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/layouts/Layout.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/sectionContext.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/frontend-cosmere/src/styles/sectionContext.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
