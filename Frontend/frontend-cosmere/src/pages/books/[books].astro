@@ -26,13 +26,13 @@ export async function getStaticPaths() {
         `El personaje no tiene un ID: ${JSON.stringify(character)}`
       );
     }
-    return { params: { characters: character.id_Character.toString() } };
+    return { params: { books: character.id_Character.toString() } };
   });
 }
 
-const id = Number(Astro.params?.characters);
+const id = Number(Astro.params?.books);
 if (isNaN(id)) {
-  throw new Error(`ID inválido recibido: ${Astro.params?.characters}`);
+  throw new Error(`ID inválido recibido: ${Astro.params?.books}`);
 }
 
 let characterObject: Character | null = null;

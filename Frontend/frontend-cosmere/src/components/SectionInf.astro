@@ -2,6 +2,7 @@
 import "@styles/sectionContext.css";
 
 import type { Character } from "@lib/utils/fetchCharacterId";
+
 import SectionDesc from "@components/SectionDesc.astro";
 
 interface Props {
@@ -51,8 +52,6 @@ const values = [
   character.stormlightLevel,
   null 
 ];
-
-const hasBooksField = keys.includes("Libros Relacionados");
 
 // Extraer el id del personaje para pasárselo a BooksRedirect
 const id_Character = character.id_Character;
