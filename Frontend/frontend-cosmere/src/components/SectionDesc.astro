@@ -1,60 +1,60 @@
 ---
-// Section.astro
 import "@styles/sectionContext.css";
+import BooksRedirect from "@components/BooksRedirect.jsx";
 import { fetchBooksByCharacter } from "@lib/utils/fetchBooksbyCId";
 import type { Book } from "@lib/utils/fetchBooksbyCId";
 
 const { key, value, id_Character } = Astro.props;
-let books: Book[] = [];
+
+// Se determina si existe la clave "Libros Relacionados"
 const hasBooksField = key.includes("Libros Relacionados");
+
+let books: Book[] = [];
 if (id_Character && hasBooksField) {
   books = await fetchBooksByCharacter(id_Character);
 }
 ---
 
-{Array.isArray(key)
-  ? key.slice(0, 10).map((k: string, index: number) => {
-      const val = value[index];
-      if (val == null || val === "") return null;
-      const isLink = k.includes("|e");
-      return (
-        <div class="contentValor">
-          <p class="key">{k.replace("|e", "")}:</p>
-          {isLink ? (
-            Array.isArray(val) ? (
-              <div class="value">
-                {val.map((item, idx) => (
-                  <a href="#" key={idx}>
-                    {item}
-                  </a>
-                ))}
-              </div>
+<!-- Renderiza el resto del contenido (los otros campos) aquí -->
+{
+  Array.isArray(key)
+    ? key.slice(0, 10).map((k, index) => {
+        const val = value[index];
+        if (val == null || val === "") return null;
+        const isLink = k.includes("|e");
+        return (
+          <div class="contentValor">
+            <p class="key">{k.replace("|e", "")}:</p>
+            {isLink ? (
+              Array.isArray(val) ? (
+                <div class="value">
+                  {val.map((item, idx) => (
+                    <div class="enl_cont">
+                      <a href="#">{item}</a>
+                      <p>↗</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <a class="value" href="#">
+                  {val}
+                </a>
+              )
             ) : (
-              <a class="value" href="#">
-                {val}
-              </a>
-            )
-          ) : (
-            <p class="value">
-              {Array.isArray(val)
-                ? val.map((item, idx) => <span key={idx}>{item}</span>)
-                : val}
-            </p>
-          )}
-        </div>
-      );
-    })
-  : null}
+              <p class="value">
+                {Array.isArray(val)
+                  ? val.map((item, idx) => <span>{item}</span>)
+                  : val}
+              </p>
+            )}
+          </div>
+        );
+      })
+    : null
+}
 
-{hasBooksField && books.length > 0 && (
-  <div class="contentValorLibros">
-    <p class="key">Libros Relacionados:</p>
-    <div class="value">
-      {books.map((book, idx) => (
-        <a href="#">
-          {book.name_Book} ({book.saga_Book})
-        </a>
-      ))}
-    </div>
-  </div>
-)}
+<div>
+  {hasBooksField && books.length > 0 && (
+    <BooksRedirect books={books} client:load />
+  )}
+</div>

@@ -5,7 +5,6 @@ import SectionInf from "@components/SectionInf.astro";
 import { fetchCharacters } from "@lib/utils/fetchCharacters";
 import { fetchCharacterId } from "@lib/utils/fetchCharacterId";
 import type { Character } from "@lib/utils/fetchCharacters";
-import Header from "@components/Header.astro";
 
 // Peticion Asincrona de los personajes
 export async function getStaticPaths() {
@@ -27,13 +26,13 @@ export async function getStaticPaths() {
         `El personaje no tiene un ID: ${JSON.stringify(character)}`
       );
     }
-    return { params: { id: character.id_Character.toString() } };
+    return { params: { character: character.id_Character.toString() } };
   });
 }
 
-const id = Number(Astro.params?.id);
+const id = Number(Astro.params?.character);
 if (isNaN(id)) {
-  throw new Error(`ID inválido recibido: ${Astro.params?.id}`);
+  throw new Error(`ID inválido recibido: ${Astro.params?.character}`);
 }
 
 let characterObject: Character | null = null;

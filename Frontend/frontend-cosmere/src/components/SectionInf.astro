@@ -9,16 +9,53 @@ interface Props {
 }
 
 const { character } = Astro.props;
+
 console.log(character.name_Character);
 console.log("MistBornType: ", character.mistBornType);
 
-// Imagen
-
+// Construir la URL de la imagen
 const baseImageUrl = "/assets/characters";
 const imageUrl = `${baseImageUrl}/character_${character.name_Character}.jpg`;
+
+// Construir la URL de destino (si la necesitas para alguna navegación interna)
 const destUrl = `/characters/${character.id_Character.toString()}`;
 
-// Extraer una lista de los libros relacionados con el personaje, y pasarlos por parametro
+const keys = [
+  "Nombre",
+  "Fecha de Nacimiento",
+  "Fecha de Muerte",
+  "Titulos",
+  "ID Libro Original",
+  "Saga",
+  "MistBornType",
+  "Rol Society",
+  "Capacidades",
+  "Orden Radiante",
+  "Spren",
+  "Nivel Juramento Radiante",
+  "Libros Relacionados" // Se usa para condicionar la visualización de BooksRedirect
+];
+
+const values = [
+  character.name_Character,
+  character.fechaNacimiento,
+  character.fechaMuerte,
+  character.titulos,
+  character.id_libro_original,
+  character.saga,
+  character.mistBornType,
+  character.rolSociety,
+  character.capacidades,
+  character.radiantOrder,
+  character.bondedSpren,
+  character.stormlightLevel,
+  null 
+];
+
+const hasBooksField = keys.includes("Libros Relacionados");
+
+// Extraer el id del personaje para pasárselo a BooksRedirect
+const id_Character = character.id_Character;
 ---
 
 <div id="containerSection">
@@ -29,42 +66,9 @@ const destUrl = `/characters/${character.id_Character.toString()}`;
     <div id="contDesc">
       <div class="contentAll">
         <SectionDesc
-          key={[
-            "Nombre",
-            "Fecha de Nacimiento",
-            "Fecha de Muerte",
-            "Titulos",
-            "ID Libro Original |e",
-            "Saga",
-            "MistBornType",
-            "Rol Society",
-            "Capacidades",
-            "Orden Radiante",
-            "Spren",
-            "Nivel Juramento Radiante",
-          ]}
-          value={[
-            character.name_Character,
-            character.fechaNacimiento,
-            character.fechaMuerte,
-            character.titulos,
-            character.id_libro_original,
-            character.saga,
-            character.mistBornType,
-            character.rolSociety,
-            character.capacidades,
-            character.radiantOrder,
-            character.bondedSpren,
-            character.stormlightLevel,
-          ]}
-          id_Character={character.id_Character}
-        />
-      </div>
-      <div>
-        <SectionDesc
-          key={["Libros Relacionados"]}
-          value={[null]}
-          id_Character={character.id_Character}
+          key={keys}
+          value={values}
+          id_Character={id_Character}
         />
       </div>
     </div>

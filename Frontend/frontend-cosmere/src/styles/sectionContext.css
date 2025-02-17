@@ -75,8 +75,20 @@ img {
   gap: 10px;
   align-items: center;  
   white-space: nowrap;
-
 }
+
+.contentValorLibrosR{
+  background-color: #1a2a3a;
+  border-top: 1px solid #c2a063;;
+  overflow-x: auto;
+  flex: 1 1 auto;
+  padding-left: 17px;
+  display: flex;
+  gap: 10px;
+  align-items: center;  
+  white-space: nowrap;
+}
+
 
 .contentValorLibros .key{
   padding-left: 7px;
@@ -94,13 +106,29 @@ img {
   align-items: center;
   justify-content: center;
 }
+
+.enl_cont{
+  flex: 1 1 auto;
+  display: flex;
+  overflow: auto;
+  align-items: center;}
+
 a {
   display: block;
   color: white;
   font-size: 20px;
   text-decoration: none;
 }
-a:hover {
+
+.enl_cont a:hover {
   text-decoration: underline;
 }
+
+.enl_cont p { 
+  margin-left : 3px;
+  padding-bottom: 10px;
+  font-size: 1em;
+  color: goldenrod;
+  text-decoration: none;
+ }
 
